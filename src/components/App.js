@@ -29,12 +29,9 @@ class App extends Component {
     return (
       <div className="content">
         <main>
-        <div className="home">
-            <Home />
-          </div>
-          <div className="calculate">
+          {/* <div className="calculate">
             <Calculate updateFootprint={this.updateFootprint}/>
-          </div>
+          </div> */}
           <div className="impact">
             <Impact />
           </div>
