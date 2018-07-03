@@ -5,7 +5,8 @@ class Action extends React.Component {
     render() {
         return(
             <div>
-                <h2>Here's two quick things you can do:</h2>
+                <h1>Make an impact with these two steps</h1>
+                <h3>Less than 10 minutes each</h3>
                 <p>Get renewable energy here...</p>
                 <p>Buy Carbon credits here...</p>
             </div>

@@ -1,16 +1,19 @@
 import React from 'react';
-import Calculate from './Calculate.js';
 
 class Home extends React.Component {
-//TODO: add error if no zip entered? Or just give avg for US?
+zipRef = React.createRef();
+householdRef = React.createRef();
+
 goToSite = e => {
   e.preventDefault();
-  this.props.history.push(`/app`)
+  const zip = this.zipRef.value.value || "US";
+  const household = this.householdRef.value.value;
+  this.props.history.push(`/app/${household}/${zip}`)
 }
   
     render() {
       return (
-        <div>
+        <div className="home-content">
           <main>
             <div className="home-wrapper">
                 <h1>Go Neutral</h1>
@@ -18,7 +21,20 @@ goToSite = e => {
                 <h3> in just 10 minutes</h3>
             </div>
             <form className="home-calculate" onSubmit={this.goToSite}>
-              <Calculate updateFootprint={this.updateFootprint}/>
+                    <input 
+                        type="text" 
+                        name="zip" 
+                        ref={this.zipRef} 
+                        placeholder="My Zip Code"
+                        />
+                    <select 
+                        type="text" 
+                        name="household" 
+                        ref={this.householdRef}
+                        >
+                        <option value="single">Just me</option>
+                        <option value="household">Household</option>
+                    </select>
               <button type="submit" className="go">Go</button>
             </form>
           </main>

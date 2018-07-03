@@ -2,41 +2,56 @@ import React, { Component } from 'react';
 import '../css/style.css';
 import Impact from './Impact.js';
 import Action from './Action.js';
-import Calculate from './Calculate.js';
-import Home from './Home.js';
+import Recalculate from './Recalculate.js';
 
 class App extends Component {
 
   state = {
-    footprint: {}
+    options: {
+    }
   };
 
-  // TODO: May need to check for and delete old state first.  Will depend on 
-  // whether or not I want to keep all previous states in the footprint object, or 
-  // just the most recent
-  updateFootprint = footprintFactors => {
-    // Take a copy of existing state
-    const footprint = {...this.state.footprint};
-    //Replace with the new state
-    footprint[`fp${Date.now()}`] = footprintFactors;
-    //set the new object to state
-    this.setState({ footprint });
+//set state based on zip and household from URL (from home input)
+componentDidMount() {
+  const zip = this.props.match.params.zip;
+  const household = this.props.match.params.household;
+  const options = {
+    zip: zip,
+    household: household
   }
+  this.setState({ options })
+}
 
-  //TODO: Keep track of footprint state in local storage when component mounts, updates, etc
+//reset state when recalculate form is submitted
+updateOptions = updatedOptions => {
+  //take a copy of the current state
+  let options = { ...this.state.options };
+  //update the state
+  options = updatedOptions;
+  //set that to state
+  this.setState({ options });
+  this.props.history.push(`/app/${updatedOptions.household}/${updatedOptions.zip}`)
+}
   
   render() {
     return (
       <div className="content">
         <main>
-          {/* <div className="calculate">
-            <Calculate updateFootprint={this.updateFootprint}/>
-          </div> */}
-          <div className="impact">
-            <Impact />
+          <div className="left">
+            {/* <div className="calculate">
+              <Calculate updateFootprint={this.updateFootprint}/>
+            </div> */}
+            <div className="impact">
+              <Impact />
+            </div>
+            <div className="recalculate">
+              <Recalculate updateOptions={this.updateOptions} state={this.state} />
+            </div>
           </div>
-          <div className="action">
-            <Action />
+          <div className="right">
+            <div className="action">
+              <Action />
+            </div>
           </div>
         </main>
       </div>

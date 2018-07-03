@@ -1,115 +1,132 @@
 @media screen and (min-width:300px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    height: 100%;
+    height: 100vh;
+  }
+  html {
+    font-size: 62.5%;
+  }
+  h1, h2, h3, p {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+  }
 
-.home-wrapper {
-  text-align: center;
-  margin: auto;
-  width: 80vw;
-  padding-top: 2.5rem;
-}
-.home-calculate {
-  position: absolute;
-  bottom: 5rem;
-  width: 100%;
-  text-align: center;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  height: 100%;
-  height: 100vh;
-}
-html {
-  font-size: 62.5%;
-}
-body {
-  background-image: url("bgphoto.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-}
-.content {
-  height: 100%;
-  padding: 0;
-  text-align: center;
-  overflow: hidden;
-}
-h1, h2, h3, p {
-  font-family: 'Open Sans', sans-serif;
-  color: white;
-}
-h1, h3 {
-  padding: 1.5rem 0;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 3rem;
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: .5rem;
-}
-h2 {
-  font-size: 4rem;
-  font-weight: 600;
-  margin: 0;
-  line-height: 4.5rem;
-}
-p {
-  font-size: 2.2rem;
-  font-weight: 300;
-  line-height: 2.8rem;
-}
-button,
-input,
-select {
-  font-family: inherit;
-  font-size: 2rem;
-  margin: 2rem auto;
-  line-height: normal;
-  display: block;
-  color: #587060;
-  border: 1px solid rgb(194, 192, 192);
-  padding: 1.5rem 1rem;
-  background:white;
-  text-transform: uppercase;
-  border-radius: 3em;
-  letter-spacing: 2px;
-  text-align: center;
-  width: 20rem;
-}
-::placeholder {
-  color: #587060;
-}
-input:hover, 
-input:focus, 
-select:hover, 
-select:focus {
-  color: #fff;
-  background: #587060;
-}
-input:hover::placeholder,
-input:focus::placeholder {
-  color:#fff;
-}
-option {
-  color: #fff;
-}
-.go {
-  border-radius: 50%;
-  width: 6rem;
-  background: #95921d;
-  color: #fff;
-}
-.go:hover, 
-.go:focus {
-  background: #5b3d00;
-  color: #fff;
-  cursor: pointer;
-}
-
-} /* ----end styles for min-width 300px---- */
-
+  h1, h3 {
+    padding: 1.5rem 0;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 3rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+  }
+  h2 {
+    font-size: 4rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 4.5rem;
+  }
+  p {
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 2.8rem;
+  }
+  /* =================================== HOME STYLES ====================================== */
+  .home-content {
+    background-image: url("bgphoto.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    height: 100vh;
+  }
+  .home-wrapper {
+    text-align: center;
+    margin: auto;
+    width: 80vw;
+    padding-top: 2.5rem;
+  }
+  .home-calculate {
+    position: absolute;
+    bottom: 5rem;
+    width: 100%;
+    text-align: center;
+  }
+  button,
+  input,
+  select {
+    font-family: inherit;
+    font-size: 2rem;
+    margin: 2rem auto;
+    line-height: normal;
+    display: block;
+    color: #587060;
+    border: 1px solid rgb(194, 192, 192);
+    padding: 1.5rem 1rem;
+    background:white;
+    text-transform: uppercase;
+    border-radius: 3em;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 20rem;
+  }
+  ::placeholder {
+    color: #587060;
+  }
+  input:hover, 
+  input:focus, 
+  select:hover, 
+  select:focus {
+    color: #fff;
+    background: #587060;
+  }
+  input:hover::placeholder,
+  input:focus::placeholder {
+    color:#fff;
+  }
+  option {
+    color: #fff;
+  }
+  .go {
+    border-radius: 50%;
+    width: 6rem;
+    background: #95921d;
+    color: #fff;
+  }
+  .go:hover, 
+  .go:focus {
+    background: #5b3d00;
+    color: #fff;
+    cursor: pointer;
+  }
+ /* =================================== APP PAGE STYLES =================================== */
+  .left {
+    background-color: #fff;
+  }
+  .left p, 
+  .left h1, 
+  .left h2, 
+  .left h3 {
+    color: #02827a;
+  }
+  .right {
+    background-color: #02827a;
+  }
+  .impact {
+    padding: 5rem;
+  }
+  .action {
+    padding: 5rem;
+  }
+  .recalculate {
+    position: absolute;
+    bottom: 5rem;
+  }
+} /* ---------------------------end styles for min-width 300px------------------------------- */
 @media screen and (min-width:600px) {
   h1, h3 {
     font-size: 3rem;
@@ -119,11 +136,25 @@ option {
     font-size: 7rem;
     line-height: 7.5rem;
   }
-
+  /* =================================== HOME STYLES ====================================== */
   input,
   select {
     display: inline-block;
     margin: 2rem;
   }
+  /* =================================== APP PAGE STYLES =================================== */
+  .left {
+    height: 100%;
+    width: 50vw;
+    position: absolute;
+    left: 0;
+  }
+  .right {
+    height: 100%;
+    width: 50vw;
+    position: absolute;
+    right: 0;
+  }
 
-} /* ----end styles: min-width 600px----  */
+
+} /* ----------------------------------end styles: min-width 600px-------------------------  */
