@@ -20,7 +20,7 @@ class Recalculate extends React.Component {
         return(
             <div>
             <form className="recalculate-form">
-                    <input type="text" name="zip" ref={this.zipRef} placeholder={this.props.state.options.zip}/>
+                    <input type="text" name="zip" ref={this.zipRef} placeholder={this.props.options.zip}/>
                     <select type="text" name="household" ref={this.householdRef}>
                         <option value="single">Just me</option>
                         <option value="household">Household</option>

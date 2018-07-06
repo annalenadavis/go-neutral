@@ -42,15 +42,18 @@ updateOptions = updatedOptions => {
               <Calculate updateFootprint={this.updateFootprint}/>
             </div> */}
             <div className="impact">
-              <Impact />
+              <Impact options={ this.state.options } />
             </div>
             <div className="recalculate">
-              <Recalculate updateOptions={this.updateOptions} state={this.state} />
+              <Recalculate 
+                updateOptions={ this.updateOptions } 
+                options={ this.state.options } 
+                />
             </div>
           </div>
           <div className="right">
             <div className="action">
-              <Action />
+              <Action options={ this.state.options } />
             </div>
           </div>
         </main>

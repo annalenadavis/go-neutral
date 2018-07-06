@@ -1,0 +1,54 @@
+{
+"renewableProviders" : [
+    {
+        "Provider" : "AEP Energy, Inc",
+        "Type" : "Certificate",
+        "Available" : "Everywhere",
+        "Website" : "https://www.aepenergy.com/"
+    },
+    {
+        "Provider" : "Agera Energy",
+        "Type" : "Certificate",
+        "Available" : "Everywhere",
+        "Website" : "https://www.ageraenergy.com"
+    },
+    {
+        "Provider" : "Blue Spruce Energy Services",
+        "Type" : "Certificate",
+        "Available" : "Everywhere",
+        "Website" : "http://www.bluespruceenergy.com/"
+    },
+    {
+        "Provider" : "Bonneville Environmental Foundation (BEF)",
+        "Type" : "Certificate",
+        "Available" : "Everywhere",
+        "Website" : "http://www.b-e-f.org"
+    },
+    {
+        "Provider" : "Liberty Power",
+        "Type" : "Certificate",
+        "Available" : "Everywhere",
+        "Website" : "https://www.libertypowercorp.com"
+    },
+    {
+        "Provider" : "North American Power and Gas LLC (NA Power)",
+        "Type" : "Certificate",
+        "Available" : "Everywhere",
+        "Website" : "http://www.napower.com"
+    },
+    {
+        "Provider" : "Sterling Planet",
+        "Type" : "Certificate",
+        "Available" : "Everywhere",
+        "Website" : "http://www.sterlingplanet.com"
+    },
+    {
+        "Provider" : "Stream Energy",
+        "Type" : "Certificate",
+        "Available" : "Everywhere",
+        "Website" : "https://mystream.com/"
+    }
+
+]
+
+}
