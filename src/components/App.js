@@ -3,15 +3,19 @@ import '../css/style.css';
 import Impact from './Impact.js';
 import Action from './Action.js';
 import Recalculate from './Recalculate.js';
+import renewableProviders from '../renewableProviders';
 
 class App extends Component {
 
   state = {
     options: {
+    },
+    renewableProviders: {
     }
   };
 
 //set state based on zip and household from URL (from home input)
+//TODO: Update renewable providers to load based on zip. & Add to ComponentDidUpdate for Recalculate component.
 componentDidMount() {
   const zip = this.props.match.params.zip;
   const household = this.props.match.params.household;
@@ -20,6 +24,7 @@ componentDidMount() {
     household: household
   }
   this.setState({ options })
+  this.setState({ renewableProviders });
 }
 
 //reset state when recalculate form is submitted
@@ -32,15 +37,13 @@ updateOptions = updatedOptions => {
   this.setState({ options });
   this.props.history.push(`/app/${updatedOptions.household}/${updatedOptions.zip}`)
 }
-  
+
+
   render() {
     return (
       <div className="content">
         <main>
           <div className="left">
-            {/* <div className="calculate">
-              <Calculate updateFootprint={this.updateFootprint}/>
-            </div> */}
             <div className="impact">
               <Impact options={ this.state.options } />
             </div>
@@ -53,7 +56,10 @@ updateOptions = updatedOptions => {
           </div>
           <div className="right">
             <div className="action">
-              <Action options={ this.state.options } />
+              <Action 
+                options={ this.state.options }
+                renewableProviders={ this.state.renewableProviders } 
+                />
             </div>
           </div>
         </main>
