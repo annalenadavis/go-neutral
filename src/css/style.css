@@ -45,6 +45,17 @@
     font-weight: 300;
     line-height: 2.4rem;
   }
+  a {
+    font-size: 2rem;
+    color: #f2f69e;
+    text-decoration: none;
+  }
+  a:visited {
+    color: #ccf9d2;
+  }
+  ul {
+    list-style-type: none;
+  }
   /* =================================== HOME STYLES ====================================== */
   .home-content {
     background-image: url("bgphoto.jpg");
@@ -122,10 +133,10 @@
   .left h1, 
   .left h2, 
   .left h3 {
-    color: #02827a;
+    color: #06424a;
   }
   .right {
-    background-color: #02827a;
+    background-color: #06424a;
   }
   .impact {
     padding: 5rem;
@@ -159,13 +170,13 @@
     width: 2.5rem;
     content: counter(list-counter);
     counter-increment: list-counter;
-    border: 1px solid #fff;
+    border: 1px solid #000;
     border-radius: 50%;
     display: inline-block;
     font-size: 1.4rem;
     line-height: 2.5rem;
     text-align: center;
-    color: white;
+    color: #000;
   }
   .bold {
     font-weight: 600;
