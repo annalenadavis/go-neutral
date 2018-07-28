@@ -58,7 +58,7 @@ showWindowShare = () => {
                         <li><p>Supporting wind, solar, or hydro power is easier than you think.</p></li>
                         <li><p>You will need your <span className="bold">account number</span> from your current energy provider</p></li>
                         <li><p>If you can't get renewable directly, you can get renewable energy certificates, so what you spend on electricity will support renewables instead of coal or .</p></li>
-                        <li><p>It may cost $5-20 more per month, depending on how big your home is.</p></li>
+                        <li><p>It may cost 5-20 more per month, depending on how big your home is.</p></li>
                     </ol>
                     <ul className="renewable-list">
                         {Object.keys(this.props.renewableProviders).map(key=> (
@@ -84,9 +84,9 @@ showWindowShare = () => {
                             ))}
                     </ul>
                 </div>
-                <button className="doMore" ref="DoMore" onClick="showWindowDoMore">I want to do more</button>
-                <button className="share" ref="Share" onClick="showWindowDoMore">Share this</button>
-                <button className="about" ref="About" onClick="showWindowAbout">About this Project</button>
+                <button className="doMore" ref="DoMore" onClick={this.showWindowDoMore}>I want to do more</button>
+                <button className="share" ref="Share" onClick={this.showWindowDoMore}>Share this</button>
+                <button className="about" ref="About" onClick={this.showWindowAbout}>About this Project</button>
             </div>
 
         )
