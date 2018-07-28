@@ -10,6 +10,7 @@ class Renewable extends React.Component {
         return (
             <li className="single-renewable">
                 <a href={ website }>{ provider }</a>
+                <p>{ type } available { available }</p>
             </li>
         );
     }

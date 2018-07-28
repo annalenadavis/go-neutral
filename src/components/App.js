@@ -4,6 +4,7 @@ import Impact from './Impact.js';
 import Action from './Action.js';
 import Recalculate from './Recalculate.js';
 import renewableProviders from '../renewableProviders';
+import carbonOffsetProviders from '../carbonOffsetProviders';
 
 class App extends Component {
 
@@ -11,11 +12,16 @@ class App extends Component {
     options: {
     },
     renewableProviders: {
+    },
+    carbonOffsetProviders: {
+    },
+    offsetCost: {
     }
   };
 
 //set state based on zip and household from URL (from home input)
 //TODO: Update renewable providers to load based on zip. & Add to ComponentDidUpdate for Recalculate component.
+//TODO: amount and offsetCost are hardcoded- calculate with access to api
 componentDidMount() {
   const zip = this.props.match.params.zip;
   const household = this.props.match.params.household;
@@ -25,6 +31,7 @@ componentDidMount() {
   }
   this.setState({ options })
   this.setState({ renewableProviders });
+  this.setState({ carbonOffsetProviders });
 }
 
 //reset state when recalculate form is submitted
@@ -59,6 +66,7 @@ updateOptions = updatedOptions => {
               <Action 
                 options={ this.state.options }
                 renewableProviders={ this.state.renewableProviders } 
+                carbonOffsetProviders= { this.state.carbonOffsetProviders }
                 />
             </div>
           </div>
