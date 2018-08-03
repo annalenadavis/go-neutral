@@ -19,6 +19,7 @@ class App extends Component {
     }
   };
 
+//TODO: Style new visual structure- see drawing. 
 //set state based on zip and household from URL (from home input)
 //TODO: Update renewable providers to load based on zip. & Add to ComponentDidUpdate for Recalculate component.
 //TODO: amount and offsetCost are hardcoded- calculate with access to api
@@ -49,16 +50,25 @@ updateOptions = updatedOptions => {
   render() {
     return (
       <div className="content">
-        <main>
-          <div className="left">
-            <div className="impact">
-              <Impact options={ this.state.options } />
-            </div>
-            <div className="recalculate">
+        <header>
+          <h1 className="title">Go Neutral</h1>
+          <div className="recalculate">
               <Recalculate 
                 updateOptions={ this.updateOptions } 
                 options={ this.state.options } 
                 />
+            </div>
+          <nav>
+            <ul>
+              <li><a href="#">Share</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </nav>
+        </header>
+        <main>
+          <div className="left">
+            <div className="impact">
+              <Impact options={ this.state.options } />
             </div>
           </div>
           <div className="right">

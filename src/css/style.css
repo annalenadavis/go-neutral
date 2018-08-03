@@ -9,6 +9,7 @@
   html {
     font-size: 62.5%;
   }
+
   h1, h2, h3, h4 {
     font-family: 'Open Sans', sans-serif;
     color: white;
@@ -125,15 +126,44 @@
     color: #fff;
     cursor: pointer;
   }
- /* =================================== APP PAGE STYLES =================================== */
-  .left {
-    background-color: #fff;
+ /* =================================== HEADER STYLES =================================== */
+ header {
+  background-color: #06424a;
+  height: 20rem;
+  text-align: center;
+}
+header h1 {
+  float: left;
+  margin: 2rem;
+}
+.recalculate {
+  display: inline-block;
+}
+nav ul {
+  list-style: none;
+  margin-right: 2rem;
+  float: right;
+}
+nav li {
+  display: inline-block;
+  margin: 2rem;
+}
+ .recalculate select,
+ .recalculate input,
+ .recalculate button {
+   font-size: 1.5rem;
+   padding: .5rem;
+   width: 15rem;
+ }
+  /* =================================== APP PAGE STYLES =================================== */
+ .left {
+    background-color: #06424a;
   }
   .left p, 
   .left h1, 
   .left h2, 
   .left h3 {
-    color: #06424a;
+    color: #fff;
   }
   .right {
     background-color: #06424a;
@@ -143,10 +173,6 @@
   }
   .action {
     padding: 5rem;
-  }
-  .recalculate {
-    position: absolute;
-    bottom: 5rem;
   }
   .renewable {
     width: 75%;
@@ -229,7 +255,6 @@
     left: 0;
   }
   .right {
-    height: 100%;
     width: 50vw;
     position: absolute;
     right: 0;

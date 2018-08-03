@@ -5,10 +5,9 @@ import CarbonOffset from './CarbonOffset.js';
 class Action extends React.Component {
 
 //TODO: Replace local renewables list with full list and show based on state (based on zip entered)
-//TODO: Finish helpful-hints list for Buying Carbon Offsets (drawings for calculate/reduce/balance?)
 //TODO: Edit list of carbon offset providers- where to store this data?
-//TODO: finish Do More, Share, and About popups (components for each? Or should it be info be included in this component?)
-//TODO: STYLE **everything**
+//TODO: Add the user's carbon footprint "amount" to state and edit "offsetCost" to reflect that
+//TODO: Finish info for: Buying Offsets helpful-hints, Do More, Share, About
 
 //Repetetive...do I need separate functions for each ref?
 setActiveEnergyHints = () => {
@@ -32,7 +31,7 @@ showWindowShare = () => {
         let household;
         let place;
         let amount;
-        let offsetCost = `$({amount}*12) - ({amount}*20)`;
+        let offsetCost = `{amount}*12 - {amount}*20`;
 
         if (this.props.options.household === "household") {
             household = "household";
