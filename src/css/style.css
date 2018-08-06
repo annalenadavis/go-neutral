@@ -1,3 +1,12 @@
+/* Colors:
+#06424a - dark green
+#96f6d0 - bright green
+#ccf9d2 - light green
+#f2f69f - yellow
+#fff
+#5c5c5c - gray */
+
+
 @media screen and (min-width:300px) {
   html, body {
     margin: 0;
@@ -12,11 +21,14 @@
 
   h1, h2, h3, h4 {
     font-family: 'Open Sans', sans-serif;
-    color: white;
+    color: #06424a;
   }
   p {
     font-family: serif;
-    color: white;
+    color: #06424a;
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 3.6rem;
   }
   h1, h3 {
     padding: 1.5rem 0;
@@ -40,11 +52,6 @@
   h4 {
     font-size: 1.8rem;
     margin: 1rem;
-  }
-  p {
-    font-size: 2rem;
-    font-weight: 300;
-    line-height: 2.4rem;
   }
   a {
     font-size: 2rem;
@@ -72,6 +79,12 @@
     margin: auto;
     width: 80vw;
     padding-top: 2.5rem;
+  }
+  .home-content h1,
+  .home-content h2,
+  .home-content h3,
+  .home-content p {
+    color: white;
   }
   .home-calculate {
     position: absolute;
@@ -128,49 +141,78 @@
   }
  /* =================================== HEADER STYLES =================================== */
  header {
-  background-color: #06424a;
-  height: 20rem;
-  text-align: center;
-}
-header h1 {
-  float: left;
-  margin: 2rem;
-}
-.recalculate {
-  display: inline-block;
-}
-nav ul {
-  list-style: none;
-  margin-right: 2rem;
-  float: right;
-}
-nav li {
-  display: inline-block;
-  margin: 2rem;
-}
- .recalculate select,
- .recalculate input,
- .recalculate button {
-   font-size: 1.5rem;
-   padding: .5rem;
-   width: 15rem;
- }
-  /* =================================== APP PAGE STYLES =================================== */
- .left {
-    background-color: #06424a;
+  background-color: #fff;
+  height: 15rem;
   }
-  .left p, 
-  .left h1, 
-  .left h2, 
-  .left h3 {
+  header h1 {
+    float: left;
+    margin: 2rem;
+  }
+  .recalculate {
+    display: inline-block;
+  }
+  .recalculate-form {
+    display: inline-block;
+    width: auto;
+    margin: 2rem 0 0 15rem;
+  }
+  nav {
+    float: right;
+  }
+  nav ul {
+    list-style: none;
+    margin-right: 2rem;
+    float: right;
+  }
+  nav li {
+    display: inline-block;
+    margin: 2rem;
+  }
+  nav a {
+    color: #06424a;
+  }
+  .recalculate select,
+  .recalculate input,
+  .recalculate button {
+    font-size: 1.5rem;
+    padding: .5rem;
+    width: 12rem;
+    letter-spacing: 0;
+    display: inline-block;
+  }
+    /* =================================== MAIN STYLES =================================== */
+  .app {
+    background-color: #fff;
+  }
+  .info-wrapper {
+    margin: 10rem;
+    width: 75%;
+  }
+  .info-box {
+    padding: 5rem;
+    background-color: #06424a;
+    text-align: center;
+    border-radius: 10px;
+    display: inline-block;
+  }
+  .info-box p {
     color: #fff;
   }
-  .right {
-    background-color: #06424a;
+  .list-box {
+    text-align: left;
   }
-  .impact {
-    padding: 5rem;
+  /* .right-wrapper {
+    float: right;
+  } */
+  .amount {
+    font-size: 6rem;
+    font-weight: 500;
+    line-height: 8rem;
+    padding: 2rem;
+    color: #f2f69f;
   }
+
+  /* =================================== APP PAGE STYLES =================================== */
   .action {
     padding: 5rem;
   }
@@ -180,7 +222,9 @@ nav li {
   .helpful-hints {
     counter-reset: list-counter;
     list-style-type: none;
-    display: none;
+  }
+  ol {
+    padding: 0;
   }
   .helpful-hints li {
     position: relative;
@@ -196,18 +240,18 @@ nav li {
     width: 2.5rem;
     content: counter(list-counter);
     counter-increment: list-counter;
-    border: 1px solid #000;
+    border: 1px solid #fff;
     border-radius: 50%;
     display: inline-block;
     font-size: 1.4rem;
     line-height: 2.5rem;
     text-align: center;
-    color: #000;
+    color: #fff;
   }
   .bold {
     font-weight: 600;
   }
-  .list-toggle {
+  /* .list-toggle {
     cursor: pointer;
     position: relative;
     padding-left: 2rem;
@@ -221,7 +265,7 @@ nav li {
       display: block;
       position: absolute;
       left: 0;
-  }
+  } */
 
 
   .active {
@@ -241,23 +285,15 @@ nav li {
     font-size: 7rem;
     line-height: 7.5rem;
   }
-  /* =================================== HOME STYLES ====================================== */
+  /* ================================= MOBILE HOME STYLES ====================================== */
   input,
   select {
     display: inline-block;
     margin: 2rem;
   }
-  /* =================================== APP PAGE STYLES =================================== */
-  .left {
-    height: 100%;
-    width: 50vw;
-    position: absolute;
-    left: 0;
-  }
-  .right {
-    width: 50vw;
-    position: absolute;
-    right: 0;
+    /* =============================== MOBILE MAIN STYLES =================================== */
+  .info-wrapper {
+    width: 50%;
   }
 
 

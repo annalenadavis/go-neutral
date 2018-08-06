@@ -5,6 +5,7 @@ import Action from './Action.js';
 import Recalculate from './Recalculate.js';
 import renewableProviders from '../renewableProviders';
 import carbonOffsetProviders from '../carbonOffsetProviders';
+import Renewable from './Renewable.js';
 
 class App extends Component {
 
@@ -52,12 +53,10 @@ updateOptions = updatedOptions => {
       <div className="content">
         <header>
           <h1 className="title">Go Neutral</h1>
-          <div className="recalculate">
-              <Recalculate 
-                updateOptions={ this.updateOptions } 
-                options={ this.state.options } 
-                />
-            </div>
+          <Recalculate 
+              updateOptions={ this.updateOptions } 
+              options={ this.state.options } 
+          />
           <nav>
             <ul>
               <li><a href="#">Share</a></li>
@@ -65,20 +64,40 @@ updateOptions = updatedOptions => {
             </ul>
           </nav>
         </header>
-        <main>
-          <div className="left">
-            <div className="impact">
+        <main className="app">
+            <div>
               <Impact options={ this.state.options } />
             </div>
-          </div>
-          <div className="right">
+            <div className="info-wrapper right-wrapper">
+                <h3>Your Energy</h3>
+              <div className="info-box">
+                <p>Energy in your zip code comes from oil, coal, hydro,
+                  nuclear, gas, wind, and solar.
+                </p>
+              </div>
+            </div>
+            <div className="info-wrapper">
+              <h3>Get Renewable Energy</h3>
+              <div className="info-box list-box">
+                    <ol className="helpful-hints" ref="EnergyHints">
+                        <li><p>It's easier than you think!</p></li>
+                        <li><p>Grab your <span className="bold">account number</span> from your current energy provider</p></li>
+                        <li><p>If you can't get it directly, get energy certificates which support renewables</p></li>
+                    </ol>
+                    <h4 className="list-toggle">Get Renewable Energy</h4>
+                    <ul className="renewable-list">
+                        {/* {Object.keys(this.state.renewableProviders).map(key=> (
+                            <Renewable key={key} details={this.props.renewableProviders[key]} />
+                            ))} */}
+                    </ul>
+              </div>
+            </div>
             <div className="action">
               <Action 
                 options={ this.state.options }
                 renewableProviders={ this.state.renewableProviders } 
                 carbonOffsetProviders= { this.state.carbonOffsetProviders }
                 />
-            </div>
           </div>
         </main>
       </div>

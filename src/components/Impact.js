@@ -21,7 +21,7 @@ class Impact extends React.Component {
         if (this.props.options.zip === "US") {
             place = "the U.S.";
         } else {
-            place = "the U.S."
+            place = "your zip code"
         };
         //connect with database with footprints by zip
         // else {
@@ -29,12 +29,11 @@ class Impact extends React.Component {
         // };
         
         return(
-            <div>
-                <p>In { place } each { household } emits around { amount } tons of carbon each year.</p> 
-                <p>This comes from flying and driving, heating and cooling our homes, the food and items we buy, and more.</p>
-                <h1>Visual here</h1>
-                <p>Your energy comes from hydro, nuclear, oil, gas, coal, etc</p>
-                <h1>Bar Chart here</h1>
+            <div className= "info-wrapper">
+                    <h3>Your Impact</h3>
+                <div className="info-box">
+                    <p>In { place } each { household } emits on average <span className = "amount">{ amount }</span> tons of carbon each year.</p> 
+                </div>
             </div>
 
         );

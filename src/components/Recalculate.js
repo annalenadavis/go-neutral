@@ -18,14 +18,14 @@ class Recalculate extends React.Component {
 
     render() {
         return(
-            <div>
-            <form className="recalculate-form">
+            <div className="recalculate">
+                <form className="recalculate-form">
                     <input type="text" name="zip" ref={this.zipRef} placeholder={this.props.options.zip}/>
                     <select type="text" name="household" ref={this.householdRef}>
                         <option value="single">Just me</option>
                         <option value="household">Household</option>
                     </select>
-                    <button onClick={this.handleSubmit}>Change my options</button>
+                    <button onClick={this.handleSubmit}>Submit</button>
                 </form>
             </div>
 
