@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import '../css/style.css';
 import Impact from './Impact.js';
-import Action from './Action.js';
 import Recalculate from './Recalculate.js';
 import renewableProviders from '../renewableProviders';
 import carbonOffsetProviders from '../carbonOffsetProviders';
 import Renewable from './Renewable.js';
+import GoNeutral from './GoNeutral.js';
 
 class App extends Component {
 
@@ -18,12 +18,25 @@ class App extends Component {
     },
     offsetCost: {
     }
-  };
+  }
 
-//TODO: Style new visual structure- see drawing. 
-//set state based on zip and household from URL (from home input)
+  //Data TODOs:
+//TODO: Replace local renewables list with full list and show based on state (based on zip entered)
 //TODO: Update renewable providers to load based on zip. & Add to ComponentDidUpdate for Recalculate component.
 //TODO: amount and offsetCost are hardcoded- calculate with access to api
+//TODO: Edit list of carbon offset providers- where to store this data?
+//TODO: Combine two EPA databases to show where energy comes from (coal, wind, etc)
+
+//Render TODOs:
+//TODO: Add a "why care" button?
+//TODO: Graphics for Impact compnonent: plane, car, house, shopping
+//TODO: Graphics for each conponent title: see sketch
+//TODO: Style lists of providers
+//TODO: MOBILE STYLES
+//TODO: Lines between info-boxes
+//TODO: Render Share & About popups
+
+
 componentDidMount() {
   const zip = this.props.match.params.zip;
   const household = this.props.match.params.household;
@@ -47,12 +60,21 @@ updateOptions = updatedOptions => {
   this.props.history.push(`/app/${updatedOptions.household}/${updatedOptions.zip}`)
 }
 
+showRenewableProviders = () => {
+  const providers = this.refs.providers;
+  providers.classList.toggle("active");
+}
+
+goHome = e => {
+  e.preventDefault();
+  this.props.history.push(`/`)
+}
 
   render() {
     return (
       <div className="content">
         <header>
-          <h1 className="title">Go Neutral</h1>
+          <h1 className="title" onClick={this.goHome}>Go Neutral</h1>
           <Recalculate 
               updateOptions={ this.updateOptions } 
               options={ this.state.options } 
@@ -78,27 +100,52 @@ updateOptions = updatedOptions => {
             </div>
             <div className="info-wrapper">
               <h3>Get Renewable Energy</h3>
-              <div className="info-box list-box">
-                    <ol className="helpful-hints" ref="EnergyHints">
+              <div className="info-box">
+                    <ol className="helpful-hints">
                         <li><p>It's easier than you think!</p></li>
                         <li><p>Grab your <span className="bold">account number</span> from your current energy provider</p></li>
                         <li><p>If you can't get it directly, get energy certificates which support renewables</p></li>
                     </ol>
-                    <h4 className="list-toggle">Get Renewable Energy</h4>
-                    <ul className="renewable-list">
-                        {/* {Object.keys(this.state.renewableProviders).map(key=> (
-                            <Renewable key={key} details={this.props.renewableProviders[key]} />
-                            ))} */}
+                    <h3 className="list-toggle" onClick={this.showRenewableProviders}>Click to choose a provider today</h3>
+                    <ul className="renewable-list" ref="providers">
+                        {Object.keys(this.state.renewableProviders).map(key=> (
+                            <Renewable key={key} details={this.state.renewableProviders[key]} />
+                            ))}
                     </ul>
               </div>
             </div>
-            <div className="action">
-              <Action 
-                options={ this.state.options }
-                renewableProviders={ this.state.renewableProviders } 
-                carbonOffsetProviders= { this.state.carbonOffsetProviders }
-                />
-          </div>
+            <div>
+              <GoNeutral 
+              options={ this.state.options } 
+              carbonOffsetProviders= { this.state.carbonOffsetProviders } 
+              />
+            </div>
+            <div className="info-wrapper">
+              <div className="info-box">
+                <h4>Woohoo! You just helped climate change in two easy steps!</h4>
+              </div>
+            </div>
+            <div className="info-wrapper">
+              <h3>Do More</h3>
+              <div className="info-box">
+                <p>Calculate > Reduce > Balance</p>
+                <ol>
+                  <li><p>Woohoo! We're so glad you want to do more</p></li>
+                  <li><p>First <span className="bold">calculate</span> a more accurate carbon footprint</p></li>
+                  <li><p>Then see what you can do to <span className="bold">reduce</span> your footprint</p></li>
+                  <li><p>And <span className="bold">balance</span> with carbon offsets</p></li>
+                  <li><p>Some bigger impact steps you can take include flying less and buying an electric or hybrid car</p></li>
+                  <li><p>Also write to your Representatives in support of implementing a carbon tax (learn about it on <a href="https://www.npr.org/sections/money/2018/07/18/630267782/episode-472-the-one-page-plan-to-fix-global-warming-revisited">Planet Money</a>)</p></li>
+                </ol>
+              </div>
+            </div>
+            <div className="info-wrapper">
+              <h3>Keep in touch</h3>
+              <div className="info-box">
+                <p>Sign up for our email list</p>
+                <p>Get remined every 6 months, annually, or get regular updates</p>
+              </div>
+            </div>
         </main>
       </div>
     );

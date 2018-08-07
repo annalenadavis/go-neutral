@@ -1,9 +1,6 @@
 import React from 'react';
 
 class Impact extends React.Component {
-//TODO: Pie Chart? Or graphics showing what we do that emits carbon
-//TODO: Combine two EPA databases to show where energy comes from (coal, wind, etc)
-//TODO: add labels and adjust layout of  Recalulate component
 
     render() {
         let household;
@@ -21,16 +18,16 @@ class Impact extends React.Component {
         if (this.props.options.zip === "US") {
             place = "the U.S.";
         } else {
-            place = "your zip code"
+            place = "the U.S."
         };
-        //connect with database with footprints by zip
+        //once connected with database with footprints by zip change to:
         // else {
         //     place = "your zip code";
         // };
         
         return(
             <div className= "info-wrapper">
-                    <h3>Your Impact</h3>
+                <h3>Your Impact</h3>
                 <div className="info-box">
                     <p>In { place } each { household } emits on average <span className = "amount">{ amount }</span> tons of carbon each year.</p> 
                 </div>

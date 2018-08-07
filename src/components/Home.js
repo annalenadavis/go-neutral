@@ -10,7 +10,8 @@ goToSite = e => {
   const household = this.householdRef.value.value;
   this.props.history.push(`/app/${household}/${zip}`)
 }
-  
+//TODO: Add photo credit, "US only", share buttons   
+
     render() {
       return (
         <div className="home-content">

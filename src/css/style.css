@@ -21,7 +21,7 @@
 
   h1, h2, h3, h4 {
     font-family: 'Open Sans', sans-serif;
-    color: #06424a;
+    color: #fff;
   }
   p {
     font-family: serif;
@@ -140,8 +140,16 @@
     cursor: pointer;
   }
  /* =================================== HEADER STYLES =================================== */
+ .content {
+  background-image: url("bgphoto.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+ }
  header {
-  background-color: #fff;
+  /* background-color: #fff; */
   height: 15rem;
   }
   header h1 {
@@ -169,7 +177,7 @@
     margin: 2rem;
   }
   nav a {
-    color: #06424a;
+    color: #fff;
   }
   .recalculate select,
   .recalculate input,
@@ -181,25 +189,24 @@
     display: inline-block;
   }
     /* =================================== MAIN STYLES =================================== */
-  .app {
+  /* .app {
     background-color: #fff;
-  }
+  } */
   .info-wrapper {
     margin: 10rem;
     width: 75%;
   }
   .info-box {
     padding: 5rem;
-    background-color: #06424a;
+    background-color: rgb(204, 249, 210, .3);
     text-align: center;
     border-radius: 10px;
     display: inline-block;
   }
+  .info-box h4,
+  .info-box h3,
   .info-box p {
     color: #fff;
-  }
-  .list-box {
-    text-align: left;
   }
   /* .right-wrapper {
     float: right;
@@ -211,26 +218,19 @@
     padding: 2rem;
     color: #f2f69f;
   }
-
-  /* =================================== APP PAGE STYLES =================================== */
-  .action {
-    padding: 5rem;
-  }
-  .renewable {
-    width: 75%;
-  }
-  .helpful-hints {
-    counter-reset: list-counter;
-    list-style-type: none;
+  .helpful-hints p {
+    line-height: 3rem;
+    margin: 1rem;
   }
   ol {
     padding: 0;
+    list-style-type: none;
   }
   .helpful-hints li {
     position: relative;
-    padding: 0 0 .5rem 4rem;
+    padding: 0 0 .5rem;
   }
-  .helpful-hints li::before {
+  /* .helpful-hints li::before {
     font-family: sans-serif;
     font-weight: 600;
     position: absolute;
@@ -247,10 +247,24 @@
     line-height: 2.5rem;
     text-align: center;
     color: #fff;
-  }
+  } */
   .bold {
     font-weight: 600;
   }
+  .renewable-list {
+    display: none;
+  }
+  .active {
+    display: block;
+  }
+  /* =================================== APP PAGE STYLES =================================== */
+  .action {
+    padding: 5rem;
+  }
+  .renewable {
+    width: 75%;
+  }
+  
   /* .list-toggle {
     cursor: pointer;
     position: relative;
@@ -268,9 +282,7 @@
   } */
 
 
-  .active {
-    display: block;
-  }
+
 
 } /* ---------------------------end styles for min-width 300px------------------------------- */
 @media screen and (min-width:600px) {
