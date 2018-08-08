@@ -19,15 +19,15 @@
     font-size: 62.5%;
   }
 
-  h1, h2, h3, h4 {
+  h1, h2, h3 {
     font-family: 'Open Sans', sans-serif;
     color: #fff;
   }
   p {
-    font-family: serif;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     color: #06424a;
     font-size: 2.8rem;
-    font-weight: 300;
+    font-weight: 200;
     line-height: 3.6rem;
   }
   h1, h3 {
@@ -50,8 +50,16 @@
     line-height: 4.5rem;
   }
   h4 {
-    font-size: 1.8rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
     margin: 1rem;
+    padding: 1rem;
+    color: #06424a;
+    text-transform: uppercase;
+    text-decoration: underline;
+    letter-spacing:.5rem;
+    cursor: pointer;
   }
   a {
     font-size: 2rem;
@@ -198,12 +206,11 @@
   }
   .info-box {
     padding: 5rem;
-    background-color: rgb(204, 249, 210, .3);
+    background-color: rgb(204, 249, 210, .4);
     text-align: center;
     border-radius: 10px;
     display: inline-block;
   }
-  .info-box h4,
   .info-box h3,
   .info-box p {
     color: #fff;
@@ -251,19 +258,35 @@
   .bold {
     font-weight: 600;
   }
-  .renewable-list {
+  .provider-list {
+    text-align: left;
+    display: none;
+  }
+  .provider-list li {
+    margin: 2rem;
+    margin-left: 1rem;
+    display: list-item;
+    list-style-type: disc;
+    list-style-position: inside;
+    color:#f2f69f;
+  }
+  .provider-list a {
+    color:#f2f69f;
+    font-size: 2.5rem;
+    font-weight: 100;
+  }
+  .provider-list p {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0;
+  }
+  .hidden {
     display: none;
   }
   .active {
     display: block;
   }
   /* =================================== APP PAGE STYLES =================================== */
-  .action {
-    padding: 5rem;
-  }
-  .renewable {
-    width: 75%;
-  }
   
   /* .list-toggle {
     cursor: pointer;

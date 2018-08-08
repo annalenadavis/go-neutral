@@ -2,15 +2,24 @@ import React from 'react';
 
 class Renewable extends React.Component {
 
-    // TODO: Finish rendering renewable providers
+    //TODO:Edit this function
+    showNote = () => {
+        let type = this.props.details.type;
+        const typeText = this.refs.typeText;
+        if (type === "Certificate") {
+            typeText.setAttribute("className", "active")
+        }
+    }
+
     render() {
-        const { available, provider, type, website } = this.props.details;
+        let { provider, website, product, type } = this.props.details;
 
         
         return (
             <li className="single-renewable">
                 <a href={ website }>{ provider }</a>
-                <p>{ type } available { available }</p>
+                <p className="hidden" ref="typeText">({ type } only)</p>
+                <p>Look for program called { product }</p>
             </li>
         );
     }

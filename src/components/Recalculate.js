@@ -7,7 +7,7 @@ class Recalculate extends React.Component {
     
     handleSubmit = event => {
         event.preventDefault();
-        const zip = this.zipRef.value.value;
+        const zip = this.zipRef.value.value || this.props.options.zip;
         const household = this.householdRef.value.value;
         const updatedOptions = { 
             ...this.props.options,

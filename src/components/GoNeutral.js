@@ -31,8 +31,8 @@ showCarbonOffsets = () => {
                             <li><p>Buy offsets to balance the <span className="amount">{ amount }</span> tons of Carbon you emit</p></li>
                         </ol>
                         <a href="http://coolclimate.berkeley.edu/calculator">(Or calculate your exact footprint)</a>
-                        <h3 className="list-toggle" onClick={this.showCarbonOffsets}>Click for Carbon Offset Providers</h3>
-                        <ul className="renewable-list" ref="offsetProviders">
+                        <h4 className="list-toggle" onClick={this.showCarbonOffsets}> + Get Carbon Offsets + </h4>
+                        <ul className="provider-list" ref="offsetProviders">
                             {Object.keys(this.props.carbonOffsetProviders).map(key=> (
                                 <CarbonOffset key={key} details={this.props.carbonOffsetProviders[key]} />
                             ))}

@@ -28,13 +28,13 @@ class App extends Component {
 //TODO: Combine two EPA databases to show where energy comes from (coal, wind, etc)
 
 //Render TODOs:
-//TODO: Add a "why care" button?
 //TODO: Graphics for Impact compnonent: plane, car, house, shopping
 //TODO: Graphics for each conponent title: see sketch
 //TODO: Style lists of providers
 //TODO: MOBILE STYLES
 //TODO: Lines between info-boxes
 //TODO: Render Share & About popups
+//TODO: Add a "why care" button?
 
 
 componentDidMount() {
@@ -106,8 +106,8 @@ goHome = e => {
                         <li><p>Grab your <span className="bold">account number</span> from your current energy provider</p></li>
                         <li><p>If you can't get it directly, get energy certificates which support renewables</p></li>
                     </ol>
-                    <h3 className="list-toggle" onClick={this.showRenewableProviders}>Click to choose a provider today</h3>
-                    <ul className="renewable-list" ref="providers">
+                    <h4 className="list-toggle" onClick={this.showRenewableProviders}> + Choose a provider + </h4>
+                    <ul className="provider-list" ref="providers">
                         {Object.keys(this.state.renewableProviders).map(key=> (
                             <Renewable key={key} details={this.state.renewableProviders[key]} />
                             ))}
@@ -122,7 +122,7 @@ goHome = e => {
             </div>
             <div className="info-wrapper">
               <div className="info-box">
-                <h4>Woohoo! You just helped climate change in two easy steps!</h4>
+                <p>Woohoo! You just helped climate change in two easy steps!</p>
               </div>
             </div>
             <div className="info-wrapper">
