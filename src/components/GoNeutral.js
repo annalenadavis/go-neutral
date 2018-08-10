@@ -1,5 +1,6 @@
 import React from 'react';
 import CarbonOffset from './CarbonOffset.js';
+import earth from '../css/images/earth.png';
 
 class GoNetural extends React.Component {
 
@@ -22,7 +23,8 @@ showCarbonOffsets = () => {
         };
 
         return(
-                <div className="info-wrapper">
+                <div className="info-wrapper right-wrapper">
+                    <img src={ earth } className="icon"/>
                     <h3>Go Carbon Neutral</h3>
                     <div className="info-box">
                         <ol className="helpful-hints">

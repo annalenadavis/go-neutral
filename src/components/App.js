@@ -6,6 +6,8 @@ import renewableProviders from '../renewableProviders';
 import carbonOffsetProviders from '../carbonOffsetProviders';
 import Renewable from './Renewable.js';
 import GoNeutral from './GoNeutral.js';
+import energybulb from '../css/images/energybulb.png'
+import sun from '../css/images/sun.png'
 
 class App extends Component {
 
@@ -28,9 +30,6 @@ class App extends Component {
 //TODO: Combine two EPA databases to show where energy comes from (coal, wind, etc)
 
 //Render TODOs:
-//TODO: Graphics for Impact compnonent: plane, car, house, shopping
-//TODO: Graphics for each conponent title: see sketch
-//TODO: Style lists of providers
 //TODO: MOBILE STYLES
 //TODO: Lines between info-boxes
 //TODO: Render Share & About popups
@@ -91,14 +90,17 @@ goHome = e => {
               <Impact options={ this.state.options } />
             </div>
             <div className="info-wrapper right-wrapper">
+              <img src={energybulb} className="icon"/>
                 <h3>Your Energy</h3>
               <div className="info-box">
                 <p>Energy in your zip code comes from oil, coal, hydro,
                   nuclear, gas, wind, and solar.
                 </p>
               </div>
+              <a href="https://oaspub.epa.gov/powpro/ept_pack.charts">Click to find out exactly how much from each source</a>
             </div>
-            <div className="info-wrapper">
+            <div className="info-wrapper left-wrapper">
+              <img src={sun} className="icon"/>
               <h3>Get Renewable Energy</h3>
               <div className="info-box">
                     <ol className="helpful-hints">
@@ -120,12 +122,12 @@ goHome = e => {
               carbonOffsetProviders= { this.state.carbonOffsetProviders } 
               />
             </div>
-            <div className="info-wrapper">
+            <div className="info-wrapper left-wrapper">
               <div className="info-box">
                 <p>Woohoo! You just helped climate change in two easy steps!</p>
               </div>
             </div>
-            <div className="info-wrapper">
+            <div className="info-wrapper right-wrapper">
               <h3>Do More</h3>
               <div className="info-box">
                 <p>Calculate > Reduce > Balance</p>
@@ -139,7 +141,7 @@ goHome = e => {
                 </ol>
               </div>
             </div>
-            <div className="info-wrapper">
+            <div className="info-wrapper left-wrapper">
               <h3>Keep in touch</h3>
               <div className="info-box">
                 <p>Sign up for our email list</p>

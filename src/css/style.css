@@ -204,9 +204,17 @@
     margin: 10rem;
     width: 75%;
   }
+  .icon {
+    display: inline-block;
+    height: 8rem;
+    margin-right: 2rem;;
+  }
+  .info-wrapper h3 {
+    display: inline-block;
+  }
   .info-box {
     padding: 5rem;
-    background-color: rgb(204, 249, 210, .4);
+    background-color: rgb(204, 249, 210, .5);
     text-align: center;
     border-radius: 10px;
     display: inline-block;
@@ -215,9 +223,6 @@
   .info-box p {
     color: #fff;
   }
-  /* .right-wrapper {
-    float: right;
-  } */
   .amount {
     font-size: 6rem;
     font-weight: 500;
@@ -308,7 +313,7 @@
 
 
 } /* ---------------------------end styles for min-width 300px------------------------------- */
-@media screen and (min-width:600px) {
+@media screen and (min-width:800px) {
   h1, h3 {
     font-size: 3rem;
     line-height: 3rem;
@@ -330,6 +335,12 @@
   .info-wrapper {
     width: 50%;
   }
+  .right-wrapper {
+    float: right;
+  }
+  .left-wrapper {
+    clear: both;
+  }
 
 
-} /* ----------------------------------end styles: min-width 600px-------------------------  */
+} /* ----------------------------------end styles: min-width 800px-------------------------  */
