@@ -1,6 +1,8 @@
 import React from 'react';
 import CarbonOffset from './CarbonOffset.js';
 import earth from '../css/images/earth.png';
+import step2stamp from '../css/images/step2stamp.png';
+
 
 class GoNetural extends React.Component {
 
@@ -23,7 +25,7 @@ showCarbonOffsets = () => {
         };
 
         return(
-                <div className="info-wrapper right-wrapper">
+                <div className="info-wrapper right-wrapper go-neutral-box">
                     <img src={ earth } className="icon"/>
                     <h3>Go Carbon Neutral</h3>
                     <div className="info-box">
@@ -39,6 +41,7 @@ showCarbonOffsets = () => {
                                 <CarbonOffset key={key} details={this.props.carbonOffsetProviders[key]} />
                             ))}
                         </ul>
+                        <img src = { step2stamp } className="stamp stamp2" />
                     </div>
                 </div>
 

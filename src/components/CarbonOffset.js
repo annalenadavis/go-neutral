@@ -9,7 +9,7 @@ class CarbonOffset extends React.Component {
         
         return (
             <li className="single-offset">
-                <a href={ website }>{ provider }</a>
+                <a target="_blank" href={ website }>{ provider }</a>
                 <p>{ type } available { available }</p>
             </li>
         );

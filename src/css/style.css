@@ -66,6 +66,9 @@
     color: #f2f69e;
     text-decoration: none;
   }
+  a:hover {
+    text-decoration: underline;
+  }
   a:visited {
     color: #ccf9d2;
   }
@@ -147,6 +150,19 @@
     color: #fff;
     cursor: pointer;
   }
+  a.photo-credit {
+    color:#95921d;
+    font-size: 12px;
+    position: absolute;
+    bottom:0;
+    right: 2rem;
+  }
+  a.photo-credit :hover {
+    text-decoration: none;
+  }
+  a.photo-credit :visited {
+    color: #95921d;
+  }
  /* =================================== HEADER STYLES =================================== */
  .content {
   background-image: url("bgphoto.jpg");
@@ -159,6 +175,8 @@
  header {
   /* background-color: #fff; */
   height: 15rem;
+  position: sticky;
+  top: 0;
   }
   header h1 {
     float: left;
@@ -196,6 +214,60 @@
     letter-spacing: 0;
     display: inline-block;
   }
+  .recalculate button {
+    background-color: #ccf9d2;
+  }
+  .recalculate button:hover {
+    background-color: #587060;
+    color: #fff;
+  }
+  .share-popup-wrapper {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.7);
+    display: block;
+    transition: all 350ms cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 5000;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .share-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #96f6d0;
+    max-width: 500px;
+    text-align: center;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+  }
+  .share-popup h3 {
+    color: #5c5c5c;
+    padding: 4rem;
+    text-transform: none;
+  }
+  .share-popup p {
+    color: #5c5c5c;
+    display: inline-block;
+    padding: 5rem;
+  }
+  .open {
+    opacity: 1;
+    visibility: visible;
+  }
+  .close {
+    width: 3rem;
+    background-color:#96f6d0;
+    position: absolute;
+    top: 33%;
+    left: 65%;
+    border: none;
+    font-weight: 600;
+  }
     /* =================================== MAIN STYLES =================================== */
   /* .app {
     background-color: #fff;
@@ -223,6 +295,25 @@
   .info-box p {
     color: #fff;
   }
+  .energy-box,
+  .go-neutral-box {
+    position: relative;
+  }
+  .stamp {
+    width: 20rem;
+    position: absolute;
+    display: block;
+  }
+  .stamp1 {
+    top: 93px;
+    left: 700px;
+    transform: rotate(20deg);
+  }
+  .stamp2 {
+    top: 132px;
+    left: -174px;
+    transform: rotate(-20deg);
+  }
   .amount {
     font-size: 6rem;
     font-weight: 500;
@@ -239,7 +330,7 @@
     list-style-type: none;
   }
   .helpful-hints li {
-    position: relative;
+    /* position: relative; */
     padding: 0 0 .5rem;
   }
   /* .helpful-hints li::before {
@@ -262,6 +353,7 @@
   } */
   .bold {
     font-weight: 600;
+    color:#f2f69f;
   }
   .provider-list {
     text-align: left;
@@ -291,26 +383,27 @@
   .active {
     display: block;
   }
-  /* =================================== APP PAGE STYLES =================================== */
-  
-  /* .list-toggle {
-    cursor: pointer;
-    position: relative;
-    padding-left: 2rem;
+  .do-more li {
+    margin: 4rem 0;
   }
-  .list-toggle:before {
-      content: "\005E";
-      font-size: 2rem;
-      font-stretch: ultra-expanded;
-      transform: rotate(180deg);
-      transition: transform .4s ease;
-      display: block;
-      position: absolute;
-      left: 0;
-  } */
-
-
-
+  .do-more-ideas {
+    list-style: square outside none;
+    color: #06424a;
+    text-align: left;
+  }
+  .do-more-ideas li {
+    margin: 0;
+    padding: 0;
+  }
+  .do-more-ideas p {
+    margin: 0;
+    color:#06424a;
+  }
+  .do-more-link {
+    color: #f2f69f;
+    font-size: 2.8rem;
+    margin-top: 4rem;
+  }
 
 } /* ---------------------------end styles for min-width 300px------------------------------- */
 @media screen and (min-width:800px) {
@@ -341,6 +434,5 @@
   .left-wrapper {
     clear: both;
   }
-
 
 } /* ----------------------------------end styles: min-width 800px-------------------------  */

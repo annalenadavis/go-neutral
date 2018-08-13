@@ -10,7 +10,7 @@ goToSite = e => {
   const household = this.householdRef.value.value;
   this.props.history.push(`/app/${household}/${zip}`)
 }
-//TODO: Add photo credit, "US only", share buttons   
+//TODO: Add share button  
 
     render() {
       return (
@@ -37,6 +37,7 @@ goToSite = e => {
                         <option value="household">Household</option>
                     </select>
               <button type="submit" className="go">Go</button>
+              <a className="photo-credit" target="_blank" href="https://unsplash.com/@johnwestrock">Photo credit: John Westrock</a>
             </form>
           </main>
         </div>

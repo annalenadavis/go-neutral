@@ -17,7 +17,7 @@ class Renewable extends React.Component {
         
         return (
             <li className="single-renewable">
-                <a href={ website }>{ provider }</a>
+                <a target="_blank" href={ website }>{ provider }</a>
                 <p className="hidden" ref="typeText">({ type } only)</p>
                 <p>Look for program called { product }</p>
             </li>
