@@ -8,19 +8,17 @@ import shopping from '../css/images/shopping.png';
 class Impact extends React.Component {
 
     render() {
-        let household;
+        let houseDescription;
         let place;
-        let amount;
+        const emissions = this.props.userDetails.emissions;
 
-        if (this.props.options.household === "household") {
-            household = "household";
-            amount = "48.5";
+        if (this.props.userDetails.household === "household") {
+            houseDescription = "household";
         } else {
-            household = "person"
-            amount = "28.2"
+            houseDescription = "person"
         };
 
-        if (this.props.options.zip === "US") {
+        if (this.props.userDetails.zip === "US") {
             place = "the U.S.";
         } else {
             place = "the U.S."
@@ -34,7 +32,7 @@ class Impact extends React.Component {
             <div className= "info-wrapper left-wrapper">
                 <img src={ footprint } className="icon"/><h3>Your Impact</h3>
                 <div className="info-box">
-                    <p>In { place } each { household } emits on average <span className = "amount">{ amount }</span> tons of carbon each year.
+                    <p>In { place } each { houseDescription } emits on average <span className = "emissions">{ emissions }</span> tons of carbon each year.
                     This includes emissions from flying, driving, heating & cooling our homes, and the food and other stuff we buy.</p> 
                     <img src={ plane } className="icon"/>
                     <img src={ car } className="icon"/>

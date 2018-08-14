@@ -7,20 +7,20 @@ class Recalculate extends React.Component {
     
     handleSubmit = event => {
         event.preventDefault();
-        const zip = this.zipRef.value.value || this.props.options.zip;
+        const zip = this.zipRef.value.value || this.props.userDetails.zip;
         const household = this.householdRef.value.value;
-        const updatedOptions = { 
-            ...this.props.options,
+        const updatedUserDetails = { 
+            ...this.props.userDetails,
             zip: zip, 
             household: household }
-        this.props.updateOptions(updatedOptions);
+        this.props.updateUserDetails(updatedUserDetails);
     }
 
     render() {
         return(
             <div className="recalculate">
                 <form className="recalculate-form">
-                    <input type="text" name="zip" ref={this.zipRef} placeholder={this.props.options.zip}/>
+                    <input type="text" name="zip" ref={this.zipRef} placeholder={this.props.userDetails.zip}/>
                     <select type="text" name="household" ref={this.householdRef}>
                         <option value="single">Just me</option>
                         <option value="household">Household</option>

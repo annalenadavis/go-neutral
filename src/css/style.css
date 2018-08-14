@@ -17,8 +17,11 @@
   }
   html {
     font-size: 62.5%;
+    box-sizing: border-box;
   }
-
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
   h1, h2, h3 {
     font-family: 'Open Sans', sans-serif;
     color: #fff;
@@ -183,12 +186,13 @@
     margin: 2rem;
   }
   .recalculate {
-    display: inline-block;
+    position: absolute;
+    left: 0;
+    top:75px;
   }
   .recalculate-form {
-    display: inline-block;
     width: auto;
-    margin: 2rem 0 0 15rem;
+    margin: 0;
   }
   nav {
     float: right;
@@ -213,6 +217,7 @@
     width: 12rem;
     letter-spacing: 0;
     display: inline-block;
+    margin: 2rem;
   }
   .recalculate button {
     background-color: #ccf9d2;
@@ -269,9 +274,6 @@
     font-weight: 600;
   }
     /* =================================== MAIN STYLES =================================== */
-  /* .app {
-    background-color: #fff;
-  } */
   .info-wrapper {
     margin: 10rem;
     width: 75%;
@@ -286,18 +288,19 @@
   }
   .info-box {
     padding: 5rem;
-    background-color: rgb(204, 249, 210, .5);
+    background-color: rgb(204, 249, 210, .7);
     text-align: center;
     border-radius: 10px;
     display: inline-block;
   }
-  .info-box h3,
+  /* .info-box h3,
   .info-box p {
     color: #fff;
-  }
+  } */
   .energy-box,
   .go-neutral-box {
     position: relative;
+    box-sizing: border-box;
   }
   .stamp {
     width: 20rem;
@@ -314,7 +317,7 @@
     left: -174px;
     transform: rotate(-20deg);
   }
-  .amount {
+  .emissions {
     font-size: 6rem;
     font-weight: 500;
     line-height: 8rem;
@@ -363,14 +366,14 @@
     margin: 2rem;
     margin-left: 1rem;
     display: list-item;
-    list-style-type: disc;
-    list-style-position: inside;
-    color:#f2f69f;
   }
   .provider-list a {
-    color:#f2f69f;
+    color:#fff;
     font-size: 2.5rem;
     font-weight: 100;
+  }
+  .provider-list a :visited {
+    color: #f2f69f;
   }
   .provider-list p {
     font-size: 2rem;
@@ -418,13 +421,22 @@
     font-size: 7rem;
     line-height: 7.5rem;
   }
-  /* ================================= MOBILE HOME STYLES ====================================== */
+ /* =================================== HEADER STYLES =================================== */
+ .recalculate {
+  display: inline-block;
+}
+ .recalculate-form {
+  margin: 1.5rem 0;
+  display: inline-block;
+}
+
+  /* ================================= DESKTOP HOME STYLES ====================================== */
   input,
   select {
     display: inline-block;
     margin: 2rem;
   }
-    /* =============================== MOBILE MAIN STYLES =================================== */
+    /* =============================== DESKTOP MAIN STYLES =================================== */
   .info-wrapper {
     width: 50%;
   }
@@ -432,7 +444,17 @@
     float: right;
   }
   .left-wrapper {
-    clear: both;
+    clear: right;
   }
 
 } /* ----------------------------------end styles: min-width 800px-------------------------  */
+@media screen and (min-width:1050px) {
+
+  .recalculate {
+    position: static;
+  }
+   .recalculate-form {
+    margin: 1.5rem 0 0 5rem;
+  }
+
+} /* ----------------------------------end styles: min-width 1050px-------------------------  */

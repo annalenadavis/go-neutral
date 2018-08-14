@@ -2,15 +2,13 @@ import React from 'react';
 
 class CarbonOffset extends React.Component {
 
-    // TODO: Finish rendering carbon offset providers
     render() {
-        const { available, provider, type, website } = this.props.details;
-
+        let { provider, website, description } = this.props.details;
         
         return (
             <li className="single-offset">
                 <a target="_blank" href={ website }>{ provider }</a>
-                <p>{ type } available { available }</p>
+                <p>{ description }</p>
             </li>
         );
     }

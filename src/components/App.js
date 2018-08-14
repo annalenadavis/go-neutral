@@ -16,51 +16,62 @@ import balance from '../css/images/balance.png';
 class App extends Component {
 
   state = {
-    options: {
+    userDetails: {
     },
     renewableProviders: {
     },
     carbonOffsetProviders: {
     },
-    offsetCost: {
-    }
   }
 
   //Data TODOs:
 //TODO: Replace local renewables list with full list and show based on state (based on zip entered)
 //TODO: Update renewable providers to load based on zip. & Add to ComponentDidUpdate for Recalculate component.
-//TODO: amount and offsetCost are hardcoded- calculate with access to api
-//TODO: Edit list of carbon offset providers- where to store this data?
+//TODO: amount (and reducedAmount) is hardcoded- calculate with access to api
 //TODO: Combine two EPA databases to show where energy comes from (coal, wind, etc)
 //TODO: add prop types to all props
 
 //Render TODOs:
 //TODO: MOBILE STYLES
 //TODO: Render Share & About popups
-//TODO: Finish Keep in Touch info box
+// Finish Keep in Touch info box
 
+//Bugs:
+// step1 stamp placement 
+//**emissions not updating based on household after moved from Impact component to state
 
 componentDidMount() {
   const zip = this.props.match.params.zip;
   const household = this.props.match.params.household;
-  const options = {
+  let emissions;
+  let reducedEmissions; //after getting renewable energy
+  if (this.state.userDetails.household === "household") {
+      emissions = 48.5;
+      reducedEmissions = 42;
+  } else {
+      emissions = 28.2;
+      reducedEmissions = 24;
+  };
+  const userDetails = {
     zip: zip,
-    household: household
+    household: household,
+    emissions: emissions,
+    reducedEmissions: reducedEmissions
   }
-  this.setState({ options })
+  this.setState({ userDetails })
   this.setState({ renewableProviders });
   this.setState({ carbonOffsetProviders });
 }
 
 //reset state when recalculate form is submitted
-updateOptions = updatedOptions => {
+updateUserDetails = updatedUserDetails => {
   //take a copy of the current state
-  let options = { ...this.state.options };
+  let userDetails = { ...this.state.userDetails };
   //update the state
-  options = updatedOptions;
+  userDetails = updatedUserDetails;
   //set that to state
-  this.setState({ options });
-  this.props.history.push(`/app/${updatedOptions.household}/${updatedOptions.zip}`)
+  this.setState({ userDetails });
+  this.props.history.push(`/app/${updatedUserDetails.household}/${updatedUserDetails.zip}`)
 }
 
 showRenewableProviders = () => {
@@ -85,8 +96,8 @@ toggleSharePopup = e => {
         <header>
           <h1 className="title" onClick={ this.goHome }>Go Neutral</h1>
           <Recalculate 
-              updateOptions={ this.updateOptions } 
-              options={ this.state.options } 
+              updateUserDetails={ this.updateUserDetails } 
+              userDetails={ this.state.userDetails } 
           />
           <nav>
             <ul>
@@ -111,7 +122,7 @@ toggleSharePopup = e => {
         </div>
         <main className="app">
             <div>
-              <Impact options={ this.state.options } />
+              <Impact userDetails={ this.state.userDetails } />
             </div>
             <div className="info-wrapper right-wrapper">
               <img src={ energybulb } className="icon"/>
@@ -123,10 +134,10 @@ toggleSharePopup = e => {
               </div>
               <a className="right-wrapper" target="_blank" href="https://oaspub.epa.gov/powpro/ept_pack.charts">Find out exactly how much from each</a>
             </div>
-            <div className="info-wrapper left-wrapper energy-box">
+            <div className="info-wrapper left-wrapper">
               <img src={ sun } className="icon"/>
               <h3>Get Renewable Energy</h3>
-              <div className="info-box">
+              <div className="info-box energy-box">
                     <ol className="helpful-hints">
                         <li><p>It's easier than you think!</p></li>
                         <li><p>Grab your <span className="bold">account number</span> from your current energy provider</p></li>
@@ -143,7 +154,7 @@ toggleSharePopup = e => {
             </div>
             <div>
               <GoNeutral 
-              options={ this.state.options } 
+              userDetails={ this.state.userDetails } 
               carbonOffsetProviders= { this.state.carbonOffsetProviders } 
               />
             </div>
@@ -161,12 +172,9 @@ toggleSharePopup = e => {
                             <ul className="do-more-ideas">
                               <li><p>Fly less</p></li>
                               <li><p>Go vegetarian (or eat less beef)</p></li>
-                              <li><p>Stop driving (or drive an electric or hybrid)</p></li>
+                              <li><p>Stop driving (or drive an electric or hybrid car)</p></li>
                               <li><p>Heat and cool your home less</p></li>
                             </ul>
-{/*                   
-                  <li><p>The big three for most people are: fly less, go vegetarian, and get rid of your car</p></li>
-                  <li><p>Or eat less beef and drive an electric or hybrid car instead</p></li> */}
                   {/* <li><p>Also write to your Representatives in support of implementing a carbon tax (learn about it on <a target="_blank" href="https://www.npr.org/sections/money/2018/07/18/630267782/episode-472-the-one-page-plan-to-fix-global-warming-revisited">Planet Money</a>)</p></li> */}
                   <li><p>And <span className="bold">balance</span> what is left with carbon offsets</p></li>
                 </ol>
