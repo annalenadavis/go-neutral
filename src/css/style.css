@@ -4,7 +4,8 @@
 #ccf9d2 - light green
 #f2f69f - yellow
 #fff
-#5c5c5c - gray */
+#5c5c5c - gray 
+#00638a - blue */
 
 
 @media screen and (min-width:300px) {
@@ -29,9 +30,9 @@
   p {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     color: #06424a;
-    font-size: 2.8rem;
+    font-size: 2rem;
     font-weight: 200;
-    line-height: 3.6rem;
+    line-height: 2.6rem;
   }
   h1, h3 {
     padding: 1.5rem 0;
@@ -54,14 +55,14 @@
   }
   h4 {
     font-family: 'Open Sans', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 500;
     margin: 1rem;
     padding: 1rem;
     color: #06424a;
     text-transform: uppercase;
     text-decoration: underline;
-    letter-spacing:.5rem;
+    /* letter-spacing:.5rem; */
     cursor: pointer;
   }
   a {
@@ -176,38 +177,32 @@
   height: 100%;
  }
  header {
-  /* background-color: #fff; */
-  height: 15rem;
-  position: sticky;
-  top: 0;
+  padding: 2rem;
   }
   header h1 {
-    float: left;
-    margin: 2rem;
+    margin: 0 1rem;
+    padding: 1rem 0 0 0;
+    display: contents;
   }
   .recalculate {
-    position: absolute;
-    left: 0;
-    top:75px;
-  }
-  .recalculate-form {
-    width: auto;
-    margin: 0;
+    display: none;
   }
   nav {
     float: right;
+    margin: 0;
+    padding: 0;
   }
   nav ul {
     list-style: none;
-    margin-right: 2rem;
-    float: right;
+    margin: 0;
+    padding: 0;
   }
   nav li {
-    display: inline-block;
-    margin: 2rem;
+    display: block;
+    margin: 0 2rem 2rem 2rem;
   }
   nav a {
-    color: #fff;
+    color: #f2f69f;
   }
   .recalculate select,
   .recalculate input,
@@ -275,54 +270,48 @@
   }
     /* =================================== MAIN STYLES =================================== */
   .info-wrapper {
-    margin: 10rem;
-    width: 75%;
+    width: 90%;
+    margin: 7rem auto;
   }
   .icon {
     display: inline-block;
     height: 8rem;
-    margin-right: 2rem;;
+    margin-right: 2rem;
   }
   .info-wrapper h3 {
     display: inline-block;
   }
   .info-box {
     padding: 5rem;
-    background-color: rgb(204, 249, 210, .7);
+    background-color: rgba(206, 206, 206, 0.8);
     text-align: center;
     border-radius: 10px;
     display: inline-block;
+    width: 90%;
   }
-  /* .info-box h3,
-  .info-box p {
-    color: #fff;
-  } */
+  .info-box a {
+    color: #f2f69f;
+  }
   .energy-box,
   .go-neutral-box {
     position: relative;
-    box-sizing: border-box;
+    box-sizing: border-box; 
+  }
+  .energy-box div,
+  .go-neutral-box div {
+    background-color: rgb(204, 249, 210, .7);
   }
   .stamp {
     width: 20rem;
     position: absolute;
-    display: block;
-  }
-  .stamp1 {
-    top: 93px;
-    left: 700px;
-    transform: rotate(20deg);
-  }
-  .stamp2 {
-    top: 132px;
-    left: -174px;
-    transform: rotate(-20deg);
+    display: none;
   }
   .emissions {
     font-size: 6rem;
     font-weight: 500;
     line-height: 8rem;
     padding: 2rem;
-    color: #f2f69f;
+    color: #00638a;
   }
   .helpful-hints p {
     line-height: 3rem;
@@ -336,27 +325,9 @@
     /* position: relative; */
     padding: 0 0 .5rem;
   }
-  /* .helpful-hints li::before {
-    font-family: sans-serif;
-    font-weight: 600;
-    position: absolute;
-    top: .2rem;
-    left: 0;
-    height: 2.5rem;
-    width: 2.5rem;
-    content: counter(list-counter);
-    counter-increment: list-counter;
-    border: 1px solid #fff;
-    border-radius: 50%;
-    display: inline-block;
-    font-size: 1.4rem;
-    line-height: 2.5rem;
-    text-align: center;
-    color: #fff;
-  } */
   .bold {
     font-weight: 600;
-    color:#f2f69f;
+    color:#00638a
   }
   .provider-list {
     text-align: left;
@@ -414,12 +385,22 @@
     font-size: 3rem;
     line-height: 3rem;
   }
-  h3 {
-    font-size: 2.5rem;
-  }
   h2 {
     font-size: 7rem;
     line-height: 7.5rem;
+  }
+  h3 {
+    font-size: 2.5rem;
+  }
+  h4 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing:.4rem;
+  }
+  p {
+    font-size: 2.8rem;
+    font-weight: 200;
+    line-height: 3.6rem;
   }
  /* =================================== HEADER STYLES =================================== */
  .recalculate {
@@ -436,9 +417,40 @@
     display: inline-block;
     margin: 2rem;
   }
+  header {
+    height: 15rem;
+    position: sticky;
+    top: 0;
+    }
+  header h1 {
+    float: left;
+    margin: 2rem;
+    display: block;
+  }
+  .recalculate {
+    position: absolute;
+    left: 0;
+    top:75px;
+  }
+  .recalculate-form {
+    width: auto;
+    margin: 0;
+  }
+  nav {
+    float: right;
+  }
+  nav ul {
+    margin: 2rem;
+    float: right;
+  }
+  nav li {
+    display: inline-block;
+  }
     /* =============================== DESKTOP MAIN STYLES =================================== */
   .info-wrapper {
+    margin: 10rem;
     width: 50%;
+    text-align: left;
   }
   .right-wrapper {
     float: right;
@@ -446,10 +458,25 @@
   .left-wrapper {
     clear: right;
   }
+  .left-float {
+    float: left;
+  }
 
 } /* ----------------------------------end styles: min-width 800px-------------------------  */
 @media screen and (min-width:1050px) {
-
+  .stamp {
+    display: block;
+  }
+  .stamp1 {
+    top: 93px;
+    left: 700px;
+    transform: rotate(20deg);
+  }
+  .stamp2 {
+    top: 132px;
+    left: -174px;
+    transform: rotate(-20deg);
+  }
   .recalculate {
     position: static;
   }

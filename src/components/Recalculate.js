@@ -9,10 +9,23 @@ class Recalculate extends React.Component {
         event.preventDefault();
         const zip = this.zipRef.value.value || this.props.userDetails.zip;
         const household = this.householdRef.value.value;
+        let emissions;
+        let reducedEmissions;
+        if (household === "household") {
+                emissions = 48.5;
+                reducedEmissions = 42;
+            } else {
+                emissions = 28.2;
+                reducedEmissions = 24;
+            };
+
         const updatedUserDetails = { 
             ...this.props.userDetails,
             zip: zip, 
-            household: household }
+            household: household,
+            emissions: emissions,
+            reducedEmissions: reducedEmissions
+        }
         this.props.updateUserDetails(updatedUserDetails);
     }
 

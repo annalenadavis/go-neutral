@@ -38,14 +38,14 @@ class App extends Component {
 
 //Bugs:
 // step1 stamp placement 
-//**emissions not updating based on household after moved from Impact component to state
+// share overlay sometimes "gets in the way" when trying to click info-box links, even though it's hidden
 
 componentDidMount() {
   const zip = this.props.match.params.zip;
   const household = this.props.match.params.household;
   let emissions;
   let reducedEmissions; //after getting renewable energy
-  if (this.state.userDetails.household === "household") {
+  if (household === "household") {
       emissions = 48.5;
       reducedEmissions = 42;
   } else {
@@ -134,10 +134,10 @@ toggleSharePopup = e => {
               </div>
               <a className="right-wrapper" target="_blank" href="https://oaspub.epa.gov/powpro/ept_pack.charts">Find out exactly how much from each</a>
             </div>
-            <div className="info-wrapper left-wrapper">
+            <div className="info-wrapper left-float energy-box">
               <img src={ sun } className="icon"/>
               <h3>Get Renewable Energy</h3>
-              <div className="info-box energy-box">
+              <div className="info-box">
                     <ol className="helpful-hints">
                         <li><p>It's easier than you think!</p></li>
                         <li><p>Grab your <span className="bold">account number</span> from your current energy provider</p></li>
