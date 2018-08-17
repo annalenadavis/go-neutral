@@ -27,13 +27,12 @@ class App extends Component {
   //Data TODOs:
 //TODO: Replace local renewables list with full list and show based on state (based on zip entered)
 //TODO: Update renewable providers to load based on zip. & Add to ComponentDidUpdate for Recalculate component.
-//TODO: amount (and reducedAmount) is hardcoded- calculate with access to api
-//TODO: Combine two EPA databases to show where energy comes from (coal, wind, etc)
-//TODO: add prop types to all props
+//TODO: emissions (and reducedEmissions) is hardcoded- calculate with access to api
+//TODO: Combine two EPA databases to show where energy comes from (coal, wind, etc) ???
+//TODO: add prop types to all props--
 
 //Render TODOs:
-//TODO: MOBILE STYLES
-//TODO: Render Share & About popups
+//TODO: Render Share & About popups --
 // Finish Keep in Touch info box
 
 //Bugs:
@@ -132,7 +131,7 @@ toggleSharePopup = e => {
                   nuclear, gas, wind, and solar.
                 </p>
               </div>
-              <a className="right-wrapper" target="_blank" href="https://oaspub.epa.gov/powpro/ept_pack.charts">Find out exactly how much from each</a>
+              <a className="right-link" target="_blank" href="https://oaspub.epa.gov/powpro/ept_pack.charts">Find out exactly how much from each</a>
             </div>
             <div className="info-wrapper left-float energy-box">
               <img src={ sun } className="icon"/>

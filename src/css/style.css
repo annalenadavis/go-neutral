@@ -44,7 +44,7 @@
     letter-spacing: .5rem;
   }
   h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     letter-spacing: .2rem;
   }
   h2 {
@@ -271,19 +271,19 @@
     /* =================================== MAIN STYLES =================================== */
   .info-wrapper {
     width: 90%;
-    margin: 7rem auto;
+    margin: 7rem 3rem;
   }
   .icon {
     display: inline-block;
-    height: 8rem;
-    margin-right: 2rem;
+    height: 4rem;
+    margin: .5rem;
   }
   .info-wrapper h3 {
     display: inline-block;
   }
   .info-box {
-    padding: 5rem;
-    background-color: rgba(206, 206, 206, 0.8);
+    padding: 1rem;
+    background-color: rgb(204, 249, 210, .7);
     text-align: center;
     border-radius: 10px;
     display: inline-block;
@@ -291,6 +291,10 @@
   }
   .info-box a {
     color: #f2f69f;
+  }
+  .right-link {
+    float: right;
+    margin-right: 4rem;
   }
   .energy-box,
   .go-neutral-box {
@@ -373,9 +377,12 @@
     margin: 0;
     color:#06424a;
   }
+  .info-wrapper a {
+    font-size: 1.1rem;
+  }
   .do-more-link {
     color: #f2f69f;
-    font-size: 2.8rem;
+    font-size: 2rem !important;
     margin-top: 4rem;
   }
 
@@ -401,6 +408,12 @@
     font-size: 2.8rem;
     font-weight: 200;
     line-height: 3.6rem;
+  }
+  a {
+    font-size: 2rem;
+  }
+  .info-wrapper a {
+    font-size: 2rem;
   }
  /* =================================== HEADER STYLES =================================== */
  .recalculate {
@@ -452,14 +465,28 @@
     width: 50%;
     text-align: left;
   }
+  .info-box {
+    padding: 5rem;
+  }
   .right-wrapper {
     float: right;
+  }
+  .right-link {
+    float: right;
+    margin-right: 7rem;
   }
   .left-wrapper {
     clear: right;
   }
   .left-float {
     float: left;
+  }
+  .icon {
+    height: 8rem;
+    margin-right: 2rem;
+  }
+  .do-more-link {
+   font-size: 2.8rem;
   }
 
 } /* ----------------------------------end styles: min-width 800px-------------------------  */
