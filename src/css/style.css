@@ -101,6 +101,9 @@
   .home-content p {
     color: white;
   }
+  .home-content h2 {
+    font-size: 3rem;
+  }
   .home-calculate {
     position: absolute;
     bottom: 5rem;
@@ -156,9 +159,9 @@
   }
   a.photo-credit {
     color:#95921d;
-    font-size: 12px;
+    font-size: 11px;
     position: absolute;
-    bottom:0;
+    bottom:-2.5rem;
     right: 2rem;
   }
   a.photo-credit :hover {
@@ -272,6 +275,7 @@
   .info-wrapper {
     width: 90%;
     margin: 7rem 3rem;
+    position: relative;
   }
   .icon {
     display: inline-block;
@@ -280,6 +284,11 @@
   }
   .info-wrapper h3 {
     display: inline-block;
+  }
+  .info-link {
+    position: absolute;
+    bottom: -1.2rem;;
+    left: 0;
   }
   .info-box {
     padding: 1rem;
@@ -291,19 +300,6 @@
   }
   .info-box a {
     color: #f2f69f;
-  }
-  .right-link {
-    float: right;
-    margin-right: 4rem;
-  }
-  .energy-box,
-  .go-neutral-box {
-    position: relative;
-    box-sizing: border-box; 
-  }
-  .energy-box div,
-  .go-neutral-box div {
-    background-color: rgb(204, 249, 210, .7);
   }
   .stamp {
     width: 20rem;
@@ -415,6 +411,11 @@
   .info-wrapper a {
     font-size: 2rem;
   }
+  a.photo-credit {
+    font-size: 12px;
+    position: absolute;
+    bottom:0;
+  }
  /* =================================== HEADER STYLES =================================== */
  .recalculate {
   display: inline-block;
@@ -471,10 +472,6 @@
   .right-wrapper {
     float: right;
   }
-  .right-link {
-    float: right;
-    margin-right: 7rem;
-  }
   .left-wrapper {
     clear: right;
   }
@@ -487,6 +484,9 @@
   }
   .do-more-link {
    font-size: 2.8rem;
+  }
+  .info-link {
+    bottom: -2rem;;
   }
 
 } /* ----------------------------------end styles: min-width 800px-------------------------  */

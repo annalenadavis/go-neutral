@@ -29,15 +29,13 @@ class App extends Component {
 //TODO: Update renewable providers to load based on zip. & Add to ComponentDidUpdate for Recalculate component.
 //TODO: emissions (and reducedEmissions) is hardcoded- calculate with access to api
 //TODO: Combine two EPA databases to show where energy comes from (coal, wind, etc) ???
-//TODO: add prop types to all props--
 
 //Render TODOs:
-//TODO: Render Share & About popups --
+//TODO: Render Share & About popups
 // Finish Keep in Touch info box
 
 //Bugs:
 // step1 stamp placement 
-// share overlay sometimes "gets in the way" when trying to click info-box links, even though it's hidden
 
 componentDidMount() {
   const zip = this.props.match.params.zip;
@@ -108,11 +106,8 @@ toggleSharePopup = e => {
         <div className="share-popup-wrapper" ref="sharePopup">
           <div className="share-popup">
             <h3>Share with others.</h3>
-            <div className="share-wrapper open">
-              <p>T</p>
-              <p>F</p>
-              <p>G</p>
-              <p>E</p>
+            <div className="share-wrapper">
+              <p>Share links to come</p>
             </div>
           </div>
           <div className="share-close" onClick={ this.toggleSharePopup }>
@@ -131,9 +126,9 @@ toggleSharePopup = e => {
                   nuclear, gas, wind, and solar.
                 </p>
               </div>
-              <a className="right-link" target="_blank" href="https://oaspub.epa.gov/powpro/ept_pack.charts">Find out exactly how much from each</a>
+              <a className="info-link" target="_blank" href="https://oaspub.epa.gov/powpro/ept_pack.charts">Find out exactly how much from each</a>
             </div>
-            <div className="info-wrapper left-float energy-box">
+            <div className="info-wrapper left-float">
               <img src={ sun } className="icon"/>
               <h3>Get Renewable Energy</h3>
               <div className="info-box">

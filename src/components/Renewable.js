@@ -2,7 +2,7 @@ import React from 'react';
 
 class Renewable extends React.Component {
 
-    //TODO:Edit this function
+    //TODO:Edit this function so that certificate shows
     showNote = () => {
         let type = this.props.details.type;
         const typeText = this.refs.typeText;

@@ -1,9 +1,21 @@
 import React from 'react';
+import PropTypes from "prop-types";
+
+//TODO: Change zip PropTypes to number when have data
 
 class Recalculate extends React.Component {
     zipRef = React.createRef();
     householdRef = React.createRef();
     
+    static propTypes = {
+        userDetails: PropTypes.shape({
+            zip: PropTypes.string,
+            household: PropTypes.string,
+            emissions: PropTypes.number,
+            reducedEmissions: PropTypes.number,
+        }),
+        updatedUserDetails: PropTypes.func,
+    }
     
     handleSubmit = event => {
         event.preventDefault();

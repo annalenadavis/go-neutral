@@ -26,7 +26,7 @@ showCarbonOffsets = () => {
         }
 
         return(
-                <div className="info-wrapper right-wrapper go-neutral-box">
+                <div className="info-wrapper right-wrapper">
                     <img src={ earth } className="icon"/>
                     <h3>Go Carbon Neutral</h3>
                     <div className="info-box">
