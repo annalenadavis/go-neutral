@@ -38,6 +38,7 @@ class Recalculate extends React.Component {
             emissions: emissions,
             reducedEmissions: reducedEmissions
         }
+        alert("Thanks for checking out my site! It's not finished yet, emissions are based on US average not zip code...yet!")
         this.props.updateUserDetails(updatedUserDetails);
     }
 

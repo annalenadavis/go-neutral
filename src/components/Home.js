@@ -8,8 +8,10 @@ goToSite = e => {
   e.preventDefault();
   const zip = this.zipRef.value.value || "US";
   const household = this.householdRef.value.value;
+  alert("Thanks for checking out my site! It's not finished yet, emissions on the next page are based on US average not zip code...yet!")
   this.props.history.push(`/app/${household}/${zip}`)
 }
+
 //TODO: Add share button  
 
     render() {
