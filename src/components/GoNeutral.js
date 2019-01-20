@@ -27,8 +27,10 @@ showCarbonOffsets = () => {
 
         return(
                 <div className="info-wrapper right-wrapper">
-                    <img src={ earth } className="icon"/>
-                    <h3>Go Carbon Neutral</h3>
+                    <div className="info-box-title-bar">
+                        <img src={ earth } className="icon"/>
+                        <h3>Go Carbon Neutral</h3>
+                    </div>
                     <div className="info-box">
                         <ol className="helpful-hints">
                             <li><p>Your actions emit carbon. It happens. But you can support projects that <span>reduce</span> emissions somewhere else!</p></li>
@@ -38,7 +40,7 @@ showCarbonOffsets = () => {
                             <li><p>This may cost { offsetCost(reducedEmissions) } for one year of your emissions.</p></li>
                         </ol>
                         <a href="http://coolclimate.berkeley.edu/calculator">(Or calculate your exact footprint)</a>
-                        <h4 className="list-toggle" onClick={this.showCarbonOffsets}> + Get Carbon Offsets + </h4>
+                        <button className="list-toggle" onClick={this.showCarbonOffsets}>Get Carbon Offsets + </button>
                         <ul className="provider-list" ref="offsetProviders">
                             {Object.keys(this.props.carbonOffsetProviders).map(key=> (
                                 <CarbonOffset key={key} details={this.props.carbonOffsetProviders[key]}  />

@@ -105,13 +105,17 @@ toggleSharePopup = e => {
         </header>
         <div className="share-popup-wrapper" ref="sharePopup">
           <div className="share-popup">
-            <h3>Share with others.</h3>
             <div className="share-wrapper">
-              <p>Share links to come</p>
+              <p>Help your friends go carbon neutral. Share how easy it is.</p>
             </div>
-          </div>
+            <a href="#" class="share-icon-border" title="twitter">
+            </a>
+            <a href="#" class="share-icon-border" title="facebook"></a>
+            <a href="#" class="share-icon-border" title="instagram"></a>
+            <a href="#" class="share-icon-border" title="email"></a>
           <div className="share-close" onClick={ this.toggleSharePopup }>
             <button className="close">X</button>
+          </div>
           </div>
         </div>
         <main className="app">
@@ -119,30 +123,36 @@ toggleSharePopup = e => {
               <Impact userDetails={ this.state.userDetails } />
             </div>
             <div className="info-wrapper right-wrapper">
-              <img src={ energybulb } className="icon"/>
+              <div className="info-box-title-bar">
+                <img src={ energybulb } className="icon"/>
                 <h3>Your Energy</h3>
+              </div>
               <div className="info-box">
                 <p>Energy in your zip code comes from oil, coal, hydro,
                   nuclear, gas, wind, and solar.
                 </p>
               </div>
-              <a className="info-link" target="_blank" href="https://oaspub.epa.gov/powpro/ept_pack.charts">Find out exactly how much from each</a>
+              <div className="info-link-wrapper">
+                <a className="info-link" target="_blank" href="https://oaspub.epa.gov/powpro/ept_pack.charts">Find out exactly how much from each</a>
+              </div>
             </div>
             <div className="info-wrapper left-float">
-              <img src={ sun } className="icon"/>
-              <h3>Get Renewable Energy</h3>
+              <div className="info-box-title-bar">
+                <img src={ sun } className="icon"/>
+                <h3>Get Renewable Energy</h3>
+              </div>
               <div className="info-box">
                     <ol className="helpful-hints">
                         <li><p>It's easier than you think!</p></li>
                         <li><p>Grab your <span className="bold">account number</span> from your current energy provider</p></li>
                         <li><p>If you can't get it directly, get energy certificates which support renewables</p></li>
                     </ol>
-                    <h4 className="list-toggle" onClick={this.showRenewableProviders}> + Choose a provider + </h4>
-                    <ul className="provider-list" ref="providers">
-                        {Object.keys(this.state.renewableProviders).map(key=> (
-                            <Renewable key={key} details={this.state.renewableProviders[key]} />
-                            ))}
-                    </ul>
+                      <button className="list-toggle" onClick={this.showRenewableProviders}>Choose a provider +</button>
+                      <ul className="provider-list" ref="providers">
+                          {Object.keys(this.state.renewableProviders).map(key=> (
+                              <Renewable key={key} details={this.state.renewableProviders[key]} />
+                              ))}
+                      </ul>
                     <img src = { step1stamp } className="stamp stamp1" />
               </div>
             </div>

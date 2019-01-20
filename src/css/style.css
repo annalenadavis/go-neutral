@@ -7,6 +7,15 @@
 #5c5c5c - gray 
 #00638a - blue */
 
+/* OR:
+#f8c420 - gold
+#bcbd46 - lime
+#75a154 - green
+#3bb793 - teal
+#5bc2e3 - blue
+#5077ba - almost purple
+*/
+
 
 @media screen and (min-width:300px) {
   html, body {
@@ -36,15 +45,15 @@
   }
   h1, h3 {
     padding: 1.5rem 0;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 400;
-    line-height: 3rem;
+    line-height: 1.3;
     margin: 0;
     text-transform: uppercase;
     letter-spacing: .5rem;
   }
   h3 {
-    font-size: 1.5rem;
+    font-size: 2.7rem;
     letter-spacing: .2rem;
   }
   h2 {
@@ -79,7 +88,7 @@
   ul {
     list-style-type: none;
   }
-  /* =================================== HOME STYLES ====================================== */
+  /* =================================== MOBILE HOME STYLES ====================================== */
   /* .home-content {
     background-image: url("bgphoto.jpg");
     background-repeat: no-repeat;
@@ -89,6 +98,8 @@
     height: 100%;
     height: 100vh;
   } */
+  /* TODO: background is fixed on mobile but moves up and temporarily leaves white space if scroll too fast */
+  /* TODO: increase weight or darken font in components- not legible on mobile */
   body:before {
     content: "";
     display: block;
@@ -182,7 +193,7 @@
   a.photo-credit :visited {
     color: #95921d;
   }
- /* =================================== HEADER STYLES =================================== */
+ /* =================================== MOBILE HEADER STYLES =================================== */
  /* .content {
   background-image: url("bgphoto.jpg");
   background-repeat: no-repeat;
@@ -219,6 +230,7 @@
   }
   nav a {
     color: #f2f69f;
+    font-size: 2.2rem;
   }
   .recalculate select,
   .recalculate input,
@@ -254,7 +266,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    background-color: #96f6d0;
+    background-color: #5bc2e3;
     max-width: 500px;
     text-align: center;
     width: 100%;
@@ -262,12 +274,12 @@
     border-radius: 10px;
   }
   .share-popup h3 {
-    color: #5c5c5c;
+    color: #fff;
     padding: 4rem;
     text-transform: none;
   }
   .share-popup p {
-    color: #5c5c5c;
+    color: #fff;
     display: inline-block;
     padding: 5rem;
   }
@@ -277,14 +289,15 @@
   }
   .close {
     width: 3rem;
-    background-color:#96f6d0;
+    background-color:#5bc2e3;
+    color: rgb(255, 255, 255, .5);
     position: absolute;
-    top: 33%;
-    left: 65%;
+    top: -4%;
+    left: 90%;
     border: none;
     font-weight: 600;
   }
-    /* =================================== MAIN STYLES =================================== */
+    /* =================================== MOBILE MAIN STYLES =================================== */
   .info-wrapper {
     width: 90%;
     margin: 7rem 3rem;
@@ -298,21 +311,44 @@
   .info-wrapper h3 {
     display: inline-block;
   }
-  .info-link {
-    position: absolute;
-    bottom: -1.2rem;;
-    left: 0;
-  }
   .info-box {
     padding: 1rem;
-    background-color: rgb(204, 249, 210, .7);
+    background-color: rgb(204, 249, 210, .8);
     text-align: center;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     display: inline-block;
     width: 90%;
+    box-shadow: 6px 6px 25px 5px rgba(22,26,26,.5);
+
   }
   .info-box a {
     color: #f2f69f;
+  }
+  .info-box-title-bar {
+    display: flex;
+    align-items: center;
+    width:90%;
+  }
+  .list-toggle {
+    background-color: #5077ba;
+    color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    font-size:1.8rem;
+  }
+  .list-title {
+    margin-top: 60px;
+    margin-bottom: 10px;
+    font-size: 16.5px;
+    letter-spacing: .6px;
+  }
+  .list-details {
+    padding: 12px 0;
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #f8f7f3;
+    border-bottom: 1px solid #f8f7f3;
+    font-size: 14.5px;
   }
   .stamp {
     width: 20rem;
@@ -320,11 +356,11 @@
     display: none;
   }
   .emissions {
-    font-size: 6rem;
+    font-size: 4rem;
     font-weight: 500;
-    line-height: 8rem;
-    padding: 2rem;
-    color: #00638a;
+    line-height: 4rem;
+    padding: .5rem;
+    color: #5077ba;
   }
   .helpful-hints p {
     line-height: 3rem;
@@ -340,11 +376,12 @@
   }
   .bold {
     font-weight: 600;
-    color:#00638a
+    color:#5077ba;
   }
   .provider-list {
     text-align: left;
     display: none;
+    padding: 0;
   }
   .provider-list li {
     margin: 2rem;
@@ -387,19 +424,38 @@
     color:#06424a;
   }
   .info-wrapper a {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+  }
+  .info-link-wrapper {
+    width: 90%;
+    padding-top:.5rem;
+  }
+  .info-link {
+    font-size:1.6rem;
   }
   .do-more-link {
     color: #f2f69f;
     font-size: 2rem !important;
     margin-top: 4rem;
   }
+   /* =================================== MOBILE SHARE POPUP =================================== */
+
+  .share-icon-border {
+    height: 60px;
+    width: 60px;
+    border: #fff solid 2px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 3rem 3rem 3rem;
+  }
 
 } /* ---------------------------end styles for min-width 300px------------------------------- */
-@media screen and (min-width:800px) {
+@media screen and (min-width:760px) {
   h1, h3 {
     font-size: 3rem;
-    line-height: 3rem;
   }
   h2 {
     font-size: 7rem;
@@ -409,7 +465,7 @@
     font-size: 7rem;
   }
   h3 {
-    font-size: 2.5rem;
+    font-size: 4rem;
   }
   h4 {
     font-size: 2.5rem;
@@ -427,12 +483,15 @@
   .info-wrapper a {
     font-size: 2rem;
   }
+  .info-link {
+    font-size:2rem;
+  }
   a.photo-credit {
     font-size: 12px;
     position: absolute;
     bottom:0;
   }
- /* =================================== HEADER STYLES =================================== */
+ /* =================================== TABLET HEADER STYLES =================================== */
  .recalculate {
   display: inline-block;
 }
@@ -440,8 +499,10 @@
   margin: 1.5rem 0;
   display: inline-block;
 }
-
-  /* ================================= DESKTOP HOME STYLES ====================================== */
+nav a {
+  font-size: 2.7rem;
+}
+  /* ================================= TABLET HOME STYLES ====================================== */
   input,
   select {
     display: inline-block;
@@ -476,7 +537,7 @@
   nav li {
     display: inline-block;
   }
-    /* =============================== DESKTOP MAIN STYLES =================================== */
+    /* =============================== TABLET MAIN STYLES =================================== */
   .info-wrapper {
     margin: 10rem;
     width: 50%;
@@ -484,6 +545,9 @@
   }
   .info-box {
     padding: 5rem;
+  }
+  .list-toggle {
+    font-size:2rem;
   }
   .right-wrapper {
     float: right;
@@ -501,18 +565,19 @@
   .do-more-link {
    font-size: 2.8rem;
   }
-  .info-link {
-    bottom: -2rem;;
+  .emissions {
+    font-size: 6rem;
+    line-height: 1em;
   }
 
-} /* ----------------------------------end styles: min-width 800px-------------------------  */
+} /* ----------------------------------end styles: min-width 760px-------------------------  */
 @media screen and (min-width:1050px) {
   .stamp {
     display: block;
   }
   .stamp1 {
-    top: 93px;
-    left: 700px;
+    top: 18%;
+    left: 81%;
     transform: rotate(20deg);
   }
   .stamp2 {
