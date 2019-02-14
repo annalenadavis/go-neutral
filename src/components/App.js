@@ -9,9 +9,9 @@ import GoNeutral from './GoNeutral.js';
 import energybulb from '../css/images/energybulb.png';
 import sun from '../css/images/sun.png';
 import step1stamp from '../css/images/step1stamp.png';
-import calculator from '../css/images/calculator.png';
-import reduce from '../css/images/reduce.png';
-import balance from '../css/images/balance.png';
+import calculator from '../css/images/calculator-b.png';
+import reduce from '../css/images/reduce-b.png';
+import balance from '../css/images/balance-b.png';
 
 class App extends Component {
 

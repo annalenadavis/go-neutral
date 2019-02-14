@@ -337,10 +337,15 @@
     font-size:1.8rem;
   }
   .list-title {
-    margin-top: 60px;
-    margin-bottom: 10px;
+    margin-top: 2.5em;
     font-size: 16.5px;
     letter-spacing: .6px;
+  }
+  .list-title a {
+    color: #06424a;
+  }
+  .list-details p {
+    color: #f8f7f3;
   }
   .list-details {
     padding: 12px 0;
@@ -389,7 +394,6 @@
     display: list-item;
   }
   .provider-list a {
-    color:#fff;
     font-size: 2.5rem;
     font-weight: 100;
   }

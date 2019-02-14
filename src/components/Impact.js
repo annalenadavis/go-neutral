@@ -1,9 +1,9 @@
 import React from 'react';
 import footprint from '../css/images/footprint.png';
-import plane from '../css/images/plane.png';
-import car from '../css/images/car.png';
-import house from '../css/images/house.png';
-import shopping from '../css/images/shopping.png';
+import plane from '../css/images/plane-b.png';
+import car from '../css/images/car-b2.png';
+import house from '../css/images/house-b.png';
+import shopping from '../css/images/shopping-b.png';
 
 class Impact extends React.Component {
 
