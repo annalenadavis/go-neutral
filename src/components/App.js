@@ -12,6 +12,11 @@ import step1stamp from '../css/images/step1stamp.png';
 import calculator from '../css/images/calculator-b.png';
 import reduce from '../css/images/reduce-b.png';
 import balance from '../css/images/balance-b.png';
+import twitter from '../css/images/twitter-green.png';
+import facebook from '../css/images/facebook-green.png';
+import instagram from '../css/images/instagram-green.png';
+import email from '../css/images/email-green.png';
+
 
 class App extends Component {
 
@@ -108,11 +113,20 @@ toggleSharePopup = e => {
             <div className="share-wrapper">
               <p>Help your friends go carbon neutral. Share how easy it is.</p>
             </div>
-            <a href="#" class="share-icon-border" title="twitter">
-            </a>
-            <a href="#" class="share-icon-border" title="facebook"></a>
-            <a href="#" class="share-icon-border" title="instagram"></a>
-            <a href="#" class="share-icon-border" title="email"></a>
+            <div className="icon-wrapper">
+              <a href="#" class="share-icon-border" title="twitter">
+                <img src={ twitter } className="share-icon" alt="Share on Twitter"/>
+              </a>
+              <a href="#" class="share-icon-border" title="facebook">
+                <img src={ facebook } className="share-icon" alt="Share on Facebook"/>
+              </a>
+              <a href="#" class="share-icon-border" title="instagram">
+                <img src={ instagram } className="share-icon" alt="Share on Instagram"/>
+              </a>
+              <a href="#" class="share-icon-border" title="email">
+                <img src={ email } className="share-icon" alt="Share by Email"/>
+              </a>
+            </div>
           <div className="share-close" onClick={ this.toggleSharePopup }>
             <button className="close">X</button>
           </div>
