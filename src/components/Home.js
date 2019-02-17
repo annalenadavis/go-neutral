@@ -13,6 +13,7 @@ goToSite = e => {
 }
 
 //TODO: Add share button  
+//TODO: Add labels for inputs
 
     render() {
       return (

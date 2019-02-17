@@ -99,7 +99,7 @@
     height: 100vh;
   } */
   /* TODO: background is fixed on mobile but moves up and temporarily leaves white space if scroll too fast */
-  /* TODO: increase weight or darken font in components- not legible on mobile */
+  /* TODO: increase weight or darken font in components- not legible on mobile - or make boxes more opaque */
   body:before {
     content: "";
     display: block;
@@ -271,6 +271,7 @@
     text-align: center;
     width: 100%;
     transform: translate(-50%, -50%);
+    box-shadow: 6px 6px 25px 5px rgba(22,26,26,.3);
   }
   .share-popup h3 {
     color: #fff;
@@ -289,12 +290,15 @@
   .close {
     width: 3rem;
     background-color: #06424a;
-    color: rgb(255, 255, 255, .5);
+    color: rgb(255, 255, 255, .3);
     position: absolute;
     top: -4%;
-    left: 90%;
+    left: 88%;
     border: none;
-    font-weight: 600;
+    font-weight: 100;
+    transform: scale(1.2,1);
+    font-size: 2.5rem;
+    cursor: pointer;
   }
     /* =================================== MOBILE MAIN STYLES =================================== */
   .info-wrapper {
@@ -350,7 +354,6 @@
     padding: 12px 0;
     display: flex;
     flex-direction: row;
-    border-top: 1px solid #f8f7f3;
     border-bottom: 1px solid #f8f7f3;
     font-size: 14.5px;
   }
@@ -441,6 +444,26 @@
     color: #f2f69f;
     font-size: 2rem !important;
     margin-top: 4rem;
+  }
+  .contact-us input {
+    border-radius: 0;
+    display: block;
+    margin: .5rem auto 3rem;
+    width: 35rem;
+    text-transform: none;
+  }
+  .contact-us label {
+    font-size: 2rem;
+    display: block;
+  }
+  .contact-us input[type=submit] {
+    background-color: #06424a;
+    border-radius: 2rem;
+    color: #fff;
+  }
+  .contact-us input[type=submit]:focus,
+  .contact-us input[type=submit]:hover {
+    background-color: #587060;
   }
    /* =================================== MOBILE SHARE POPUP =================================== */
  
@@ -577,6 +600,15 @@ nav a {
 
 } /* ----------------------------------end styles: min-width 760px-------------------------  */
 @media screen and (min-width:1050px) {
+  header {
+    background: rgb(6, 66, 74, .2);
+    z-index: 2;
+    padding: 0;
+    height: 89px;
+  }
+  header ul {
+    margin: 3.5rem;
+  }
   .stamp {
     display: block;
   }

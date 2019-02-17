@@ -200,9 +200,15 @@ toggleSharePopup = e => {
             </div>
             <div className="info-wrapper right-wrapper">
               <h3>Keep in touch</h3>
-              <div className="info-box">
-                <p>Sign up for our email list</p>
-                <p>Get reminded every 6 months, annually, or get regular updates</p>
+              <div className="info-box contact-us">
+                <form>
+                  <p>Sign up for our email list</p>
+                  <label htmlFor="name">Name</label>
+                  <input type="text" className="name" name="name" placeholder="Name"/>
+                  <label htmlFor="email">Email</label>
+                  <input type="email" name="email" size="30" className="email" placeholder="Email"/>
+                  <input type="submit"/>
+                </form>
               </div>
             </div>
             <div className="left-wrapper"></div>
