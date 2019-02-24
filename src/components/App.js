@@ -201,12 +201,16 @@ toggleSharePopup = e => {
             <div className="info-wrapper right-wrapper">
               <h3>Keep in touch</h3>
               <div className="info-box contact-us">
-                <form>
+                <form data-netlify="true">
                   <p>Sign up for our email list</p>
-                  <label htmlFor="name">Name</label>
-                  <input type="text" className="name" name="name" placeholder="Name"/>
-                  <label htmlFor="email">Email</label>
-                  <input type="email" name="email" size="30" className="email" placeholder="Email"/>
+                  <div>
+                    <input type="text" className="name" name="name" id="name" required/>
+                    <label htmlFor="name" class="visually-hidden">Name (required)</label>
+                  </div>
+                  <div>
+                    <input type="email" name="email" size="30" className="email" id="email" required/>
+                    <label htmlFor="email" class="visually-hidden">Email (required)</label>
+                  </div>
                   <input type="submit"/>
                 </form>
               </div>

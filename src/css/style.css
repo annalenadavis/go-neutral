@@ -88,6 +88,16 @@
   ul {
     list-style-type: none;
   }
+  /* .visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  } */
   /* =================================== MOBILE HOME STYLES ====================================== */
   /* .home-content {
     background-image: url("bgphoto.jpg");
@@ -99,7 +109,6 @@
     height: 100vh;
   } */
   /* TODO: background is fixed on mobile but moves up and temporarily leaves white space if scroll too fast */
-  /* TODO: increase weight or darken font in components- not legible on mobile - or make boxes more opaque */
   body:before {
     content: "";
     display: block;
@@ -316,7 +325,7 @@
   }
   .info-box {
     padding: 1rem;
-    background-color: rgb(204, 249, 210, .8);
+    background-color: rgb(204, 249, 210, .9);
     text-align: center;
     /* border-radius: 10px; */
     display: inline-block;
@@ -445,26 +454,6 @@
     font-size: 2rem !important;
     margin-top: 4rem;
   }
-  .contact-us input {
-    border-radius: 0;
-    display: block;
-    margin: .5rem auto 3rem;
-    width: 35rem;
-    text-transform: none;
-  }
-  .contact-us label {
-    font-size: 2rem;
-    display: block;
-  }
-  .contact-us input[type=submit] {
-    background-color: #06424a;
-    border-radius: 2rem;
-    color: #fff;
-  }
-  .contact-us input[type=submit]:focus,
-  .contact-us input[type=submit]:hover {
-    background-color: #587060;
-  }
    /* =================================== MOBILE SHARE POPUP =================================== */
  
   .icon-wrapper {
@@ -479,6 +468,67 @@
     height:45px;
     margin: 0 3rem 3rem 3rem;
   }
+ /* =================================== MOBILE SHARE CONTACT FORM =================================== */
+ .contact-us form {
+   text-align: left
+ } 
+ .contact-us input {
+    border-radius: 0;
+    display: block;
+    margin: .5rem auto 3rem;
+    width: 100%;
+    text-transform: none; 
+  }
+  .contact-us input::placeholder {
+    text-transform: uppercase;
+  }
+  .contact-us label {
+    font-size: 2rem;
+    display: block;
+    position: absolute;
+    bottom: .8em;
+    left: 2em;
+    width: 100%;
+    transition: 0.2s;
+    color: #5c5c5c;
+    text-transform: uppercase;
+  }
+  .contact-us input[type=submit] {
+    background-color: #06424a;
+    border-radius: 2rem;
+    color: #fff;
+  }
+  .contact-us input[type=submit]:focus,
+  .contact-us input[type=submit]:hover {
+    background-color: #587060;
+  } 
+  form > div {
+    position: relative;
+  }
+  form > div > label {
+    position: absolute;
+  }
+  .contact-us input:hover + label {
+    color: lightgray;
+    cursor: text;
+  }
+  .contact-us input:focus + label,
+  .contact-us input:valid + label {
+    top: .5em;
+    left: .5em;
+    color:#808080;
+    font-size: 1.5rem;
+    height: 100%;
+    width: 100%;
+    clip: auto;
+    margin: 0;
+    display: block;
+    text-transform: uppercase;
+  }
+  .contact-us input:focus + label {
+    color: lightgray;
+  }
+
 
 } /* ---------------------------end styles for min-width 300px------------------------------- */
 @media screen and (min-width:760px) {
@@ -573,6 +623,7 @@ nav a {
   }
   .info-box {
     padding: 5rem;
+    background-color: rgb(204, 249, 210, .8);
   }
   .list-toggle {
     font-size:2rem;
