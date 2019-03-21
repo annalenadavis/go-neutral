@@ -356,9 +356,6 @@
   .list-title a {
     color: #06424a;
   }
-  .list-details p {
-    color: #f8f7f3;
-  }
   .list-details {
     padding: 12px 0;
     display: flex;
