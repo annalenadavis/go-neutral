@@ -159,7 +159,7 @@ toggleSharePopup = e => {
                 </p>
               </div>
               <div className="info-link-wrapper">
-                <a className="info-link" target="_blank" href="https://oaspub.epa.gov/powpro/ept_pack.charts">Find out exactly how much from each</a>
+                <a className="info-link" href="https://oaspub.epa.gov/powpro/ept_pack.charts">Find out exactly how much from each</a>
               </div>
             </div>
             <div className="info-wrapper left-float">
@@ -197,7 +197,7 @@ toggleSharePopup = e => {
                 <img src={ reduce } className="icon" alt=""/>
                 <img src={ balance } className="icon" alt=""/>
                 <ol>
-                  <li><a className="do-more-link" target="_blank" href="https://coolclimate.berkeley.edu/calculator">Calculate a more detailed footprint</a></li>
+                  <li><a className="do-more-link" target="_blank" rel="noopener noreferrer" href="https://coolclimate.berkeley.edu/calculator">Calculate a more detailed footprint</a></li>
                   <li><p>What are the biggest parts of your footprint? Take action to <span className="bold">reduce</span> those areas. This might mean you:</p></li>
                             <ul className="do-more-ideas">
                               <li><p>Fly less</p></li>

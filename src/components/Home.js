@@ -64,7 +64,7 @@ class Home extends React.Component {
                         <option value="house">Household</option>
                     </select>
               <button type="submit" className="go">Go</button>
-              <a className="photo-credit" target="_blank" href="https://unsplash.com/@johnwestrock">Photo credit: John Westrock</a>
+              <a className="photo-credit" href="https://unsplash.com/@johnwestrock">Photo credit: John Westrock</a>
             </form>
           </main>
         </div>

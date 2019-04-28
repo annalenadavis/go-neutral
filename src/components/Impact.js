@@ -43,7 +43,7 @@ class Impact extends React.Component {
                     <img src={ shopping } className="icon" alt=""/>
                 </div>
                 <div className="info-link-wrapper">
-                    <a className ="info-link" target="_blank" href="https://coolclimate.berkeley.edu/calculator">Emissions estimate from the Cool Climate Network</a>
+                    <a className ="info-link" href="https://coolclimate.berkeley.edu/calculator">Emissions estimate from the Cool Climate Network</a>
                 </div>
             </div>
 
