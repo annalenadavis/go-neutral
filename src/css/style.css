@@ -354,7 +354,8 @@
     letter-spacing: .6px;
   }
   .list-title a {
-    color: #06424a;
+    color: #5077ba;
+    text-decoration: underline;
   }
   .list-details {
     padding: 12px 0;
@@ -365,7 +366,7 @@
   }
   .stamp {
     width: 20rem;
-    position: absolute;
+    /* position: absolute; */
     display: none;
   }
   .emissions {
@@ -661,14 +662,16 @@ nav a {
     display: block;
   }
   .stamp1 {
-    top: 18%;
-    left: 81%;
-    transform: rotate(20deg);
+    /* top: 18%;
+    left: 81%; */
+    transform: rotate(-20deg);
+    margin: 0 auto 2rem;
   }
   .stamp2 {
-    top: 132px;
-    left: -174px;
+    /* top: 132px;
+    left: -174px; */
     transform: rotate(-20deg);
+    margin: 0 auto 2rem;
   }
   .recalculate {
     position: static;

@@ -17,12 +17,12 @@ class Renewable extends React.Component {
         
         return (
             <li className="single-renewable">
-                <div class="list-title">
+                <div className="list-title">
                     <a target="_blank" href={ website }>{ provider }</a>
                 </div>
-                <div class="list-details">
+                <div className="list-details">
                     <p className="hidden" ref="typeText">({ type } only)</p>
-                    <p>Program: { product }</p>
+                    <p>Renewable Program: { product }</p>
                 </div>
             </li>
         );

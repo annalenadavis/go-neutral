@@ -37,17 +37,13 @@ class App extends Component {
 
 //Render TODOs:
 //TODO: Render Share & About popups
-// Finish Keep in Touch info box
-
-//Bugs:
-// step1 stamp placement 
 
 componentDidMount() {
   const zip = this.props.match.params.zip;
   const household = this.props.match.params.household;
   let emissions;
   let reducedEmissions; //after getting renewable energy
-  if (household === "household") {
+  if (household === "house") {
       emissions = 48.5;
       reducedEmissions = 42;
   } else {
@@ -60,7 +56,7 @@ componentDidMount() {
     emissions: emissions,
     reducedEmissions: reducedEmissions
   }
-  this.setState({ userDetails })
+  this.setState({ userDetails });
   this.setState({ renewableProviders });
   this.setState({ carbonOffsetProviders });
 }
@@ -71,6 +67,21 @@ updateUserDetails = updatedUserDetails => {
   let userDetails = { ...this.state.userDetails };
   //update the state
   userDetails = updatedUserDetails;
+  //update emissions
+  let emissions;
+  let reducedEmissions;
+  if (updatedUserDetails.household === "house") {
+    emissions = 48.5;
+    reducedEmissions = 42;
+  } else {
+    emissions = 28.2;
+    reducedEmissions = 24;
+  };
+  userDetails = { 
+    ...updatedUserDetails,
+    emissions: emissions,
+    reducedEmissions: reducedEmissions
+  }
   //set that to state
   this.setState({ userDetails });
   this.props.history.push(`/app/${updatedUserDetails.household}/${updatedUserDetails.zip}`)
@@ -99,7 +110,8 @@ toggleSharePopup = e => {
           <h1 className="title" onClick={ this.goHome }>Go Neutral</h1>
           <Recalculate 
               updateUserDetails={ this.updateUserDetails } 
-              userDetails={ this.state.userDetails } 
+              userDetails={ this.state.userDetails }
+              userInput={ this.state.userInput }
           />
           <nav>
             <ul>
@@ -114,21 +126,21 @@ toggleSharePopup = e => {
               <p>Help your friends go carbon neutral. Share how easy it is.</p>
             </div>
             <div className="icon-wrapper">
-              <a href="#" class="share-icon-border" title="twitter">
+              <a href="#" className="share-icon-border" title="twitter">
                 <img src={ twitter } className="share-icon" alt="Share on Twitter"/>
               </a>
-              <a href="#" class="share-icon-border" title="facebook">
+              <a href="#" className="share-icon-border" title="facebook">
                 <img src={ facebook } className="share-icon" alt="Share on Facebook"/>
               </a>
-              <a href="#" class="share-icon-border" title="instagram">
+              <a href="#" className="share-icon-border" title="instagram">
                 <img src={ instagram } className="share-icon" alt="Share on Instagram"/>
               </a>
-              <a href="#" class="share-icon-border" title="email">
+              <a href="#" className="share-icon-border" title="email">
                 <img src={ email } className="share-icon" alt="Share by Email"/>
               </a>
             </div>
           <div className="share-close" onClick={ this.toggleSharePopup }>
-            <button className="close">X</button>
+            <button className="close" aria-label="close popup">X</button>
           </div>
           </div>
         </div>
@@ -138,7 +150,7 @@ toggleSharePopup = e => {
             </div>
             <div className="info-wrapper right-wrapper">
               <div className="info-box-title-bar">
-                <img src={ energybulb } className="icon"/>
+                <img src={ energybulb } className="icon" alt=""/>
                 <h3>Your Energy</h3>
               </div>
               <div className="info-box">
@@ -152,14 +164,15 @@ toggleSharePopup = e => {
             </div>
             <div className="info-wrapper left-float">
               <div className="info-box-title-bar">
-                <img src={ sun } className="icon"/>
+                <img src={ sun } className="icon" alt=""/>
                 <h3>Get Renewable Energy</h3>
               </div>
               <div className="info-box">
+                    <img src = { step1stamp } className="stamp stamp1" alt="Big Impact, Little Effort, Step 1"/>
                     <ol className="helpful-hints">
                         <li><p>It's easier than you think!</p></li>
-                        <li><p>Grab your <span className="bold">account number</span> from your current energy provider</p></li>
-                        <li><p>If you can't get it directly, get energy certificates which support renewables</p></li>
+                        <li><p>Grab your <span className="bold">account number</span> from your current energy provider.</p></li>
+                        <li><p>If you can't get it directly, get energy certificates which support renewables.</p></li>
                     </ol>
                       <button className="list-toggle" onClick={this.showRenewableProviders}>Choose a provider +</button>
                       <ul className="provider-list" ref="providers">
@@ -167,7 +180,6 @@ toggleSharePopup = e => {
                               <Renewable key={key} details={this.state.renewableProviders[key]} />
                               ))}
                       </ul>
-                    <img src = { step1stamp } className="stamp stamp1" />
               </div>
             </div>
             <div>
@@ -181,9 +193,9 @@ toggleSharePopup = e => {
               <div className="info-box">
                 <p>That's so great you want to do more! The best way is to:</p>
                 <p>Calculate > Reduce > Balance</p>
-                <img src={ calculator } className="icon"/>
-                <img src={ reduce } className="icon"/>
-                <img src={ balance } className="icon"/>
+                <img src={ calculator } className="icon" alt=""/>
+                <img src={ reduce } className="icon" alt=""/>
+                <img src={ balance } className="icon" alt=""/>
                 <ol>
                   <li><a className="do-more-link" target="_blank" href="https://coolclimate.berkeley.edu/calculator">Calculate a more detailed footprint</a></li>
                   <li><p>What are the biggest parts of your footprint? Take action to <span className="bold">reduce</span> those areas. This might mean you:</p></li>
@@ -205,11 +217,11 @@ toggleSharePopup = e => {
                   <p>Sign up for our email list</p>
                   <div>
                     <input type="text" className="name" name="name" id="name" required/>
-                    <label htmlFor="name" class="visually-hidden">Name (required)</label>
+                    <label htmlFor="name" className="visually-hidden">Name (required)</label>
                   </div>
                   <div>
                     <input type="email" name="email" size="30" className="email" id="email" required/>
-                    <label htmlFor="email" class="visually-hidden">Email (required)</label>
+                    <label htmlFor="email" className="visually-hidden">Email (required)</label>
                   </div>
                   <input type="submit"/>
                 </form>

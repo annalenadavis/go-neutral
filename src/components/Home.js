@@ -1,16 +1,40 @@
 import React from 'react';
 
 class Home extends React.Component {
-zipRef = React.createRef();
-householdRef = React.createRef();
+  state = {
+    userInput: {
+    }
+  }
 
-goToSite = e => {
-  e.preventDefault();
-  const zip = this.zipRef.value.value || "US";
-  const household = this.householdRef.value.value;
-  alert("Thanks for checking out my site! It's not finished yet, emissions on the next page are based on US average not zip code...yet!")
-  this.props.history.push(`/app/${household}/${zip}`)
-}
+  handleZipChange = event => {
+    let zip = event.target.value;
+    if (zip.length === 5 || zip === "US") {
+        const updatedUserInput = { 
+            ...this.state.userInput,
+            zip: zip,
+        }
+        const userInput = updatedUserInput;
+        this.setState({ userInput });
+      }
+  }
+
+  handleSelectChange = event => {
+      const household = event.target.value;
+      const updatedUserInput = { 
+          ...this.state.userInput,
+          household: household,
+      }
+      const userInput = updatedUserInput;
+      this.setState({ userInput });
+  }
+
+  goToSite = e => {
+    e.preventDefault();
+    const zip = this.state.userInput.zip || "US";
+    const household = this.state.userInput.household || "single";
+    alert("Thanks for checking out the site! It's not finished yet, emissions on the next page are based on US average not zip code...yet!")
+    this.props.history.push(`/app/${household}/${zip}`)
+  }
 
 //TODO: Add share button  
 //TODO: Add labels for inputs
@@ -28,16 +52,16 @@ goToSite = e => {
                     <input 
                         type="text" 
                         name="zip" 
-                        ref={this.zipRef} 
                         placeholder="My Zip Code"
+                        onChange={this.handleZipChange}
                         />
                     <select 
                         type="text" 
                         name="household" 
-                        ref={this.householdRef}
+                        onChange={this.handleSelectChange}
                         >
                         <option value="single">Just me</option>
-                        <option value="household">Household</option>
+                        <option value="house">Household</option>
                     </select>
               <button type="submit" className="go">Go</button>
               <a className="photo-credit" target="_blank" href="https://unsplash.com/@johnwestrock">Photo credit: John Westrock</a>

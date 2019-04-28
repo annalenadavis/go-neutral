@@ -31,16 +31,16 @@ class Impact extends React.Component {
         return(
             <div className= "info-wrapper left-wrapper">
                 <div className="info-box-title-bar">
-                    <img src={ footprint } className="icon"/>
+                    <img src={ footprint } className="icon" alt=""/>
                     <h3>Your Impact</h3>
                 </div>
                 <div className="info-box">
                     <p>In { place } each { houseDescription } emits on average <span className = "emissions">{ emissions }</span> tons of carbon each year.
                     This includes emissions from flying, driving, heating & cooling our homes, and the food and other stuff we buy.</p> 
-                    <img src={ plane } className="icon"/>
-                    <img src={ car } className="icon"/>
-                    <img src={ house } className="icon"/>
-                    <img src={ shopping } className="icon"/>
+                    <img src={ plane } className="icon" alt=""/>
+                    <img src={ car } className="icon" alt=""/>
+                    <img src={ house } className="icon" alt=""/>
+                    <img src={ shopping } className="icon" alt=""/>
                 </div>
                 <div className="info-link-wrapper">
                     <a className ="info-link" target="_blank" href="https://coolclimate.berkeley.edu/calculator">Emissions estimate from the Cool Climate Network</a>
