@@ -116,10 +116,11 @@ toggleSharePopup = e => {
           <nav>
             <ul>
               <li><a href="#" onClick={ this.toggleSharePopup }>Share</a></li>
-              <li><a href="#">About</a></li>
+              {/* <li><a href="#">About</a></li> */}
             </ul>
           </nav>
         </header>
+        {/* share popup */}
         <div className="share-popup-wrapper" ref="sharePopup">
           <div className="share-popup">
             <div className="share-wrapper">
@@ -145,24 +146,13 @@ toggleSharePopup = e => {
           </div>
         </div>
         <main className="app">
+          <div className="body-wrapper">
+            {/* Impact component */}
             <div>
               <Impact userDetails={ this.state.userDetails } />
             </div>
+            {/* Renewable Energy */}
             <div className="info-wrapper right-wrapper">
-              <div className="info-box-title-bar">
-                <img src={ energybulb } className="icon" alt=""/>
-                <h3>Your Energy</h3>
-              </div>
-              <div className="info-box">
-                <p>Energy in your zip code comes from oil, coal, hydro,
-                  nuclear, gas, wind, and solar.
-                </p>
-              </div>
-              <div className="info-link-wrapper">
-                <a className="info-link" href="https://oaspub.epa.gov/powpro/ept_pack.charts">Find out exactly how much from each</a>
-              </div>
-            </div>
-            <div className="info-wrapper left-float">
               <div className="info-box-title-bar">
                 <img src={ sun } className="icon" alt=""/>
                 <h3>Get Renewable Energy</h3>
@@ -182,13 +172,15 @@ toggleSharePopup = e => {
                       </ul>
               </div>
             </div>
+            {/* GoNeutral */}
             <div>
               <GoNeutral 
               userDetails={ this.state.userDetails } 
               carbonOffsetProviders= { this.state.carbonOffsetProviders } 
               />
             </div>
-            <div className="info-wrapper left-wrapper do-more">
+            {/* Do More */}
+            <div className="info-wrapper right-wrapper do-more">
               <h3>Do More</h3>
               <div className="info-box">
                 <p>That's so great you want to do more! The best way is to:</p>
@@ -210,7 +202,8 @@ toggleSharePopup = e => {
                 </ol>
               </div>
             </div>
-            <div className="info-wrapper right-wrapper">
+            {/* Keep In Touch */}
+            <div className="info-wrapper left-wrapper">
               <h3>Keep in touch</h3>
               <div className="info-box contact-us">
                 <form data-netlify="true">
@@ -227,7 +220,7 @@ toggleSharePopup = e => {
                 </form>
               </div>
             </div>
-            <div className="left-wrapper"></div>
+          </div>
         </main>
       </div>
     );

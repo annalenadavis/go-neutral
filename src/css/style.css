@@ -5,7 +5,9 @@
 #f2f69f - yellow
 #fff
 #5c5c5c - gray 
-#00638a - blue */
+#00638a - blue
+#6495ed - cornflower
+ */
 
 /* OR:
 #f8c420 - gold
@@ -334,7 +336,8 @@
 
   }
   .info-box a {
-    color: #f2f69f;
+    color: #6495ed;
+    text-decoration: underline;
   }
   .info-box-title-bar {
     display: flex;
@@ -657,6 +660,10 @@ nav a {
   }
   header ul {
     margin: 3.5rem;
+  }
+  .body-wrapper {
+    max-width: 1700px;
+    margin: auto;
   }
   .stamp {
     display: block;
