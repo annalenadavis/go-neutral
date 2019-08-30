@@ -40,7 +40,7 @@
   }
   p {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    color: #06424a;
+    color: #042c31;
     font-size: 2rem;
     font-weight: 200;
     line-height: 2.6rem;
@@ -79,7 +79,6 @@
   a {
     font-size: 2rem;
     color: #f2f69e;
-    text-decoration: none;
   }
   a:hover {
     text-decoration: underline;
@@ -90,7 +89,11 @@
   ul {
     list-style-type: none;
   }
-  /* .visually-hidden {
+  input[type=submit]:hover,
+  h1.title:hover {
+    cursor: pointer;
+  }
+  .visually-hidden {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -99,7 +102,7 @@
     padding: 0;
     position: absolute;
     width: 1px;
-  } */
+  }
   /* =================================== MOBILE HOME STYLES ====================================== */
   /* .home-content {
     background-image: url("bgphoto.jpg");
@@ -357,7 +360,7 @@
     letter-spacing: .6px;
   }
   .list-title a {
-    color: #5077ba;
+    color: #2f528d;
     text-decoration: underline;
   }
   .list-details {
@@ -552,6 +555,7 @@
     letter-spacing:.4rem;
   }
   p {
+    color: #06424a;
     font-size: 2.8rem;
     font-weight: 200;
     line-height: 3.6rem;

@@ -38,7 +38,6 @@ showCarbonOffsets = () => {
                             <li><p>Your actions emit carbon. It happens. But you can support projects that <span>reduce</span> emissions somewhere else!</p></li>
                             <li><p>Like methane digesters, clean cookstoves, wind farms, and other projects in the US or in developing countries.</p></li>
                             <li><p>In your Zip Code</p></li>
-                            <li><p>for your household</p></li>
                             <li><p>After getting Renewable Energy</p></li>
                             <li><p>You need to offset <span className="emissions">{ reducedEmissions }</span>tons of Carbon</p></li>
                             <li><p>(or { tonsToPounds(reducedEmissions)} thousand pounds)</p></li>

@@ -210,11 +210,11 @@ toggleSharePopup = e => {
                   <p>Sign up for our email list</p>
                   <div>
                     <input type="text" className="name" name="name" id="name" required/>
-                    <label htmlFor="name" className="visually-hidden">Name (required)</label>
+                    <label htmlFor="name">Name (required)</label>
                   </div>
                   <div>
                     <input type="email" name="email" size="30" className="email" id="email" required/>
-                    <label htmlFor="email" className="visually-hidden">Email (required)</label>
+                    <label htmlFor="email">Email (required)</label>
                   </div>
                   <input type="submit"/>
                 </form>

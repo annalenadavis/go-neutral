@@ -49,20 +49,22 @@ class Home extends React.Component {
                 <h3> in just 10 minutes</h3>
             </div>
             <form className="home-calculate" onSubmit={this.goToSite}>
-                    <input 
-                        type="text" 
-                        name="zip" 
-                        placeholder="My Zip Code"
-                        onChange={this.handleZipChange}
-                        />
-                    <select 
-                        type="text" 
-                        name="household" 
-                        onChange={this.handleSelectChange}
-                        >
-                        <option value="single">Just me</option>
-                        <option value="house">Household</option>
-                    </select>
+              <label for="zip" class="visually-hidden">Zip Code</label>
+              <input 
+                  type="text" 
+                  name="zip" 
+                  placeholder="My Zip Code"
+                  onChange={this.handleZipChange}
+                  />
+              <label for="household" class="visually-hidden">Household Size</label>
+              <select 
+                  type="text" 
+                  name="household" 
+                  onChange={this.handleSelectChange}
+                  >
+                  <option value="single">Just me</option>
+                  <option value="house">Household</option>
+              </select>
               <button type="submit" className="go">Go</button>
               <a className="photo-credit" href="https://unsplash.com/@johnwestrock">Photo credit: John Westrock</a>
             </form>

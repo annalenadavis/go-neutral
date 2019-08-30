@@ -52,7 +52,9 @@ class Recalculate extends React.Component {
         return(
             <div className="recalculate">
                 <form className="recalculate-form" onSubmit={this.handleSubmit}>
+                    <label for="zip" class="visually-hidden">Zip Code</label>
                     <input type="text" name="zip" defaultValue={this.props.userDetails.zip} onChange={this.handleZipChange}/>
+                    <label for="household" class="visually-hidden">Household Size</label>
                     <select type="text" name="household" defaultValue={this.props.userDetails.household} onChange={this.handleSelectChange}>
                         <option value="single">Just me</option>
                         <option value="house">Household</option>
