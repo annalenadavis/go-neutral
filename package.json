@@ -17,7 +17,7 @@
     "react-transition-group": "^4.0.0",
     "serve": "^11.0.0",
     "stylus": "0.54.5",
-    "terser": "^3.14.1"
+    "terser": "^4.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
